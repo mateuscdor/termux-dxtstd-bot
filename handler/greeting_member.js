@@ -55,6 +55,7 @@ module.exports = async (group) => {
             if (group.participants.length > 1) username = `${group.participants.length} Participant...`, manyParticipant = true;
             else if (group.participants.length == 1) username = global.db.users[group.participants[0]] ? global.db.users[group.participants[0]].profile.name.saved || global.db.users[group.participants[0]].profile.name.notify : `+${group.participants[0].split('@')[0]}`;
             
+            let pp_user = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
             try {
                 pp_user = manyParticipant ? (pp_user) : (await client.profilePictureUrl(group.participants[0], 'image'))
             } catch (e) {
