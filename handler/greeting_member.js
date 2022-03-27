@@ -76,7 +76,7 @@ module.exports = async (group) => {
             image.print(font, 305, 525, {
                 text: username
             }, 2000, 500) //NAME USER
-            image.print(font, 382, 613, {
+            image.print(font, 400, 613, {
                 text: groupdata.subject
             }, 2000, 500) //NAME GROUPS
             
