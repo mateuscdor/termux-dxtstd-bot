@@ -42,7 +42,8 @@ module.exports = async (group) => {
             
             let caption = ((groupdata.config.greeting.welcome).replace('@user', username)).replace('@subject', groupdata.subject)
             
-            await client.sendMessage(group.jid, { image: await image.getBufferAsync("image/png"), mimetype: 'image/png' })
+            const imageJimp = await image.getBufferAsync("image/png")
+            await client.sendMessage(group.id, { image: imageJimp, mimetype: 'image/png', caption: caption })
             
         } else if (group.action == 'remove') {
             
