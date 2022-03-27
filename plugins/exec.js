@@ -7,33 +7,19 @@ let exec = promisify(cp.exec).bind(cp);
 
 
 let command = async (data) => {
-    let execu;
     try {
-        execu = await exec(data.args.join(" "));
+        const exec = cp.exec(data.args.join(' '), {
+            stdio: [process.stdin, pipe, pipe],
+            shell: true
+        })
+        exec.stdout.on('data', (stdout) => {
+            client.sendMessage(data.from, { text: util.format(stdout.toString()) }, { quoted: data.chat })
+        })
+        exec.stderr.on('data', (stderr) => {
+            client.sendMessage(data.from, { text: util.format(stderr.toString()) }, { quoted: data.chat })
+        })
     } catch (e) {
-        execu = e;
-    } finally {
-        if (execu.stderr) {
-            client.sendMessage(data.from, {
-              text: util.format(execu.stderr)
-            }, {
-                quoted: data.chat
-            });
-        } else if (execu != undefined && !execu.stdout) {
-            client.sendMessage(data.from, {
-              text: util.format(execu)
-            }, {
-                quoted: data.chat
-            });
-        }
-        if (execu.stdout) {
-            client.sendMessage(data.from, {
-                text: util.format(execu.stdout)
-            }, {
-                quoted: data.chat
-            });
-        }
-        
+        client.sendMessage(data.from, { text: util.format(e) }, { quoted: data.chat })
     }
 };
 
