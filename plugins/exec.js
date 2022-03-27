@@ -9,7 +9,7 @@ let exec = promisify(cp.exec).bind(cp);
 let command = async (data) => {
     try {
         const exec = cp.exec(data.args.join(' '), {
-            stdio: [process.stdin, pipe, pipe],
+            stdio: [process.stdin, "pipe", "pipe"],
             shell: true
         })
         exec.stdout.on('data', (stdout) => {
