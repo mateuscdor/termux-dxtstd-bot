@@ -44,11 +44,11 @@ module.exports = async (group) => {
             image.resize(Math.floor(1270*0.9), Math.floor(720*0.9))
             //END 
             
-            let caption = ((groupdata.config.greeting.welcome).replace('@user', username)).replace('@subject', groupdata.subject)
+            let caption = ((groupdata.config.greeting.welcome).replace('@user', (manyParticipant? username : '@' + group.participants[0].split('@')[0]))).replace('@subject', groupdata.subject)
             
             const imageJimp = await image.getBufferAsync("image/png")
-            await client.sendMessage(group.id, { image: imageJimp, mimetype: 'image/png', caption: caption })
-            
+            await client.sendMessage(group.id, { image: imageJimp, mimetype: 'image/png', caption: caption, contextInfo: { mentionedJid: group.participants } })
+             
         } else if (group.action == 'remove') {
             let username;
             let manyParticipant = false;
@@ -87,10 +87,10 @@ module.exports = async (group) => {
             image.resize(Math.floor(1270*0.9), Math.floor(720*0.9))
             //END 
             
-            let caption = ((groupdata.config.greeting.out).replace('@user', username)).replace('@subject', groupdata.subject)
+            let caption = ((groupdata.config.greeting.out).replace('@user', (manyParticipant? username : '@' + group.participants[0].split('@')[0]))).replace('@subject', groupdata.subject)
             
             const imageJimp = await image.getBufferAsync("image/png")
-            await client.sendMessage(group.id, { image: imageJimp, mimetype: 'image/png', caption: caption })
+            await client.sendMessage(group.id, { image: imageJimp, mimetype: 'image/png', caption: caption, contextInfo: { mentionedJid: group.participants } })
             
         }
     } catch (e) {
