@@ -4,7 +4,7 @@ const Jimp = require('jimp')
 
 module.exports = async (group) => {
     try {
-        const groupdata = global.db.groups[group.jid]
+        const groupdata = global.db.groups[group.id]
         if (!groupdata.config.greeting.status) return;
         
         if (group.action == 'add') {
@@ -42,7 +42,7 @@ module.exports = async (group) => {
             
             let caption = ((groupdata.config.greeting.welcome).replace('@user', username)).replace('@subject', groupdata.subject)
             
-            await client.sendMessage(group.jid, { image: await image.getBufferAsync("image/png"), mimetype: 'image/png' })
+            await client.sendMessage(group.id, { image: await image.getBufferAsync("image/png"), mimetype: 'image/png' })
             
         } else if (group.action == 'remove') {
             
