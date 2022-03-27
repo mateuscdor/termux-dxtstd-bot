@@ -41,7 +41,7 @@ module.exports = async (group) => {
             ppImg.resize(200, 200) //Resize Picture
             ppImg.circle() //Crop to circle
             image.blit(ppImg, 28, 300) //Add to image
-            image.resize(Math.floor(1270*0.9), Math.floor(720*0.9))
+            image.resize(Math.floor(1270*0.8), Math.floor(720*0.8))
             //END 
             
             let caption = ((groupdata.config.greeting.welcome).replace('@user', (manyParticipant? username : '@' + group.participants[0].split('@')[0]))).replace('@subject', groupdata.subject)
@@ -84,7 +84,7 @@ module.exports = async (group) => {
             ppImg.resize(200, 200) //Resize Picture
             ppImg.circle() //Crop to circle
             image.blit(ppImg, 28, 300) //Add to image
-            image.resize(Math.floor(1270*0.9), Math.floor(720*0.9))
+            image.resize(Math.floor(1270*0.8), Math.floor(720*0.8))
             //END 
             
             let caption = ((groupdata.config.greeting.leave).replace('@user', (manyParticipant? username : '@' + group.participants[0].split('@')[0]))).replace('@subject', groupdata.subject)
