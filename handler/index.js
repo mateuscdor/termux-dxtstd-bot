@@ -1,7 +1,7 @@
 const handler = require("./handler")
-const newHandler = require("./newHandler")
+const greeting_member = require("./greeting_member")
 
 module.exports = {
     handler,
-    newHandler
+    greeting_member
 }

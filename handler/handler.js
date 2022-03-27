@@ -34,7 +34,15 @@ module.exports = async (chat) => {
 
         const sender = isGroup ? chat.key.participant: chat.key.remoteJid;
         const groupMetadata = isGroup ? await client.groupMetadata(from): '';
-
+        
+        if (isGroup && !global.db.groups[from]) {
+            global.db.groups[from] = {
+                ...groupMetadata,
+                ...JSON.parse(fs.readFileSync(dir.assets + "newGroups.json"))
+            }
+            fs.writeFileSync(path.join(dir.database, 'groups.json'), JSON.stringify(global.db.groups, null, '\t'));
+        }
+        
         const isOwner = (sender.split("@")[0] === config.owner.noPhone);
         const isAdmin = '';
         const isSAdmin = '';
@@ -58,7 +66,7 @@ module.exports = async (chat) => {
         
         
         //READ MSG
-        client.sendReadReceipt(from, (isGroup ? chat.participant: undefined), [chat.key.id]);
+        client.sendReadReceipt(from, (isGroup ? chat.key.participant: undefined), [chat.key.id]);
 
         //LOGGING MSG
         if (!isCmd && !isGroup) logger.pc(text, username, type);
@@ -92,10 +100,6 @@ module.exports = async (chat) => {
                     });
                     return;
                 }
-
-                global.db.users[sender].history.command.last = command;
-                global.db.users[sender].history.command[markTime()] = command;
-
                 if (plugin.permission.owner && !isOwner) {
                     client.sendMessage(data.from, {
                         text: "You aren't my owner!"
@@ -104,7 +108,11 @@ module.exports = async (chat) => {
                     });
                     return;
                 }
+                
+                global.db.users[sender].history.command.last = command;
+                global.db.users[sender].history.command[markTime()] = command;
 
+                
                 try {
                     await plugin.call(this, data);
                     delete plugin;
