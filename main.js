@@ -217,7 +217,7 @@ const start = async () => {
         client.handler = require('./handler');
         //client.ev.on('messages.upsert', client.handler.newHandler);
         client.ev.on('messages.upsert', client.handler.handler);
-        client.ev.on('group-participant.update', client.handler.greeting_member)
+        client.ev.on('group-participants.update', client.handler.greeting_member)
 
         //CONNECTION UPDATE
         client.ev.on('connection.update',

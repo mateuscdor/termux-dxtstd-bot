@@ -1,4 +1,6 @@
 const fetcher = require('../lib/fetcher.js')
+const fs = require('fs')
+const Jimp = require('jimp')
 
 module.exports = async (group) => {
     try {
