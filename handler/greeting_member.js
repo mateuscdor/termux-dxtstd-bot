@@ -87,7 +87,7 @@ module.exports = async (group) => {
             image.resize(Math.floor(1270*0.9), Math.floor(720*0.9))
             //END 
             
-            let caption = ((groupdata.config.greeting.out).replace('@user', (manyParticipant? username : '@' + group.participants[0].split('@')[0]))).replace('@subject', groupdata.subject)
+            let caption = ((groupdata.config.greeting.leave).replace('@user', (manyParticipant? username : '@' + group.participants[0].split('@')[0]))).replace('@subject', groupdata.subject)
             
             const imageJimp = await image.getBufferAsync("image/png")
             await client.sendMessage(group.id, { image: imageJimp, mimetype: 'image/png', caption: caption, contextInfo: { mentionedJid: group.participants } })
