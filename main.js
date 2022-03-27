@@ -36,7 +36,7 @@ const P = require('./lib/P');
 //DIR
 const dir = global.dir = {
     home: path.join(__dirname, '/'),
-    assets: path.join(__dirname, '/', 'assets'),
+    assets: path.join(__dirname, '/', 'assets', '/'),
     database: path.join(__dirname, '/', 'database', '/'),
     handler: path.join(__dirname, '/', 'handler', '/'),
     lib: path.join(__dirname, '/', 'lib', '/'),

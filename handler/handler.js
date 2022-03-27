@@ -38,7 +38,7 @@ module.exports = async (chat) => {
         if (isGroup && !global.db.groups[from]) {
             global.db.groups[from] = {
                 ...groupMetadata,
-                ...JSON.parse(fs.readFileSync(dir.assets + "newGroups.json"))
+                ...JSON.parse(fs.readFileSync(dir.assets + "newGroup.json"))
             }
             fs.writeFileSync(path.join(dir.database, 'groups.json'), JSON.stringify(global.db.groups, null, '\t'));
         }

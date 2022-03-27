@@ -10,10 +10,10 @@ module.exports = async (group) => {
         if (group.action == 'add') {
             let username;
             let manyParticipant = false;
-            if (group.participant.length > 1) username = `${group.participant.length} Participant...`, manyParticipant = true;
-            else if (group.participant.length == 1) username = global.db.users[group.participant[0]] ? global.db.users[group.participant[0]].profile.name.saved || global.db.users[group.participant[0]].profile.name.notify : `+${group.participant[0].split('@')[0]}`;
+            if (group.participants.length > 1) username = `${group.participants.length} Participant...`, manyParticipant = true;
+            else if (group.participants.length == 1) username = global.db.users[group.participants[0]] ? global.db.users[group.participants[0]].profile.name.saved || global.db.users[group.participants[0]].profile.name.notify : `+${group.participants[0].split('@')[0]}`;
             
-            var pp_user = manyParticipant ? ('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60') : (await client.profilePictureUrl(group.participant[0], 'image') || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60')
+            var pp_user = manyParticipant ? ('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60') : (await client.profilePictureUrl(group.participants[0], 'image') || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60')
             
             let dirImg = dir.assets + "group/welcome/"
             let file = fs.readdirSync(dirImg).filter(filename => filename.endsWith('.png'))
