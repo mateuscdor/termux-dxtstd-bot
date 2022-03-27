@@ -19,7 +19,7 @@ module.exports = async (group) => {
             let file = fs.readdirSync(dirImg).filter(filename => filename.endsWith('.png'))
             var random = Math.floor(Math.random() * file.length)
             
-            const ppBuff = fetcher.getBuffer(pp_user)
+            const ppBuff = await fetcher.getBuffer(pp_user)
             
             //Load File
             let image = await Jimp.read(dirImg + file[random])
@@ -42,7 +42,7 @@ module.exports = async (group) => {
             
             let caption = ((groupdata.config.greeting.welcome).replace('@user', username)).replace('@subject', groupdata.subject)
             
-            await client.sendMessage(group.id, { image: await image.getBufferAsync("image/png"), mimetype: 'image/png' })
+            await client.sendMessage(group.jid, { image: await image.getBufferAsync("image/png"), mimetype: 'image/png' })
             
         } else if (group.action == 'remove') {
             
