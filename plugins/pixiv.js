@@ -13,7 +13,7 @@ const command = async (data) => {
         const arrayIllust = hasil.body.illust.data
         
         const random = Math.floor(Math.random() * arrayIllust.length)
-        let illust = await pixiv.illust(arrayIllust[random])
+        let illust = await pixiv.illust(arrayIllust[random].id)
         
         client.sendMessage(data.from, {  image: { url: illust.body.urls.original } })
     } catch (e) {
