@@ -2,6 +2,7 @@ const fs = require('fs')
 const util = require('util');
 const scrapper = require(dir.lib + 'scrapper.js')
 const readmore = require(dir.lib + 'readmore.js')
+const axios = require('axios')
 
 const command = async (data) => {
     try {
@@ -12,10 +13,39 @@ const command = async (data) => {
         if (hasil.error) return;
         const arrayIllust = hasil.body.illust.data
         
-        const random = Math.floor(Math.random() * arrayIllust.length)
+        const random = Math.floor(Math.random() * (arrayIllust.length > 50 ? 50: arrayIllust.length))
         let illust = await pixiv.illust(arrayIllust[random].id)
         
-        client.sendMessage(data.from, {  image: { url: illust.body.urls.original } })
+        const res = await axios({
+            method: "get",
+            url: illust.body.urls.original,
+            headers: {
+                'DNT': 1,
+                'Upgrade-Insecure-Request': 1,
+                'path': illust.body.urls.original.replace("https://i.pximg.net", ""),
+                'authority': "i.pximg.net",
+                'referer': 'https://www.pixiv.net/'
+                
+            },
+            responseType: 'arraybuffer'
+        })
+        
+        
+        /*
+        title
+description
+viewCount
+createDate
+userName
+        */
+        let teksP = "*PIXIV*"
+                      + `\n`
+               + `\n` + `*TITLE*: ${illust.body.title}`
+               + `\n` + `*DESCRIPTION*: ${illust.body.description}`
+               + `\n` + `*VIEWER*: ${illust.body.viewCount}`
+               + `\n` + `*AUTHOR*: ${userName}`
+               + `\n` + `*POST*: https://www.pixiv.net/artworks/${arrayIllust[random].id}`
+        client.sendMessage(data.from, { image: res.data, caption: teksP }, { quoted: data.chat })
     } catch (e) {
       logger.error(e)
         client.sendMessage(data.from, {
