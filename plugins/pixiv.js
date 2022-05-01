@@ -10,7 +10,7 @@ const command = async (data) => {
         
         let hasil = await pixiv.search(data.args.join(" "))
         
-        if (hasil.error) return;
+        if (hasil.error) return client.sendMessage(data.from, { text: " The keyword does not exist!" }, { quoted: data.chat });
         const arrayIllust = hasil.body.illust.data
         
         const random = Math.floor(Math.random() * (arrayIllust.length > 50 ? 50: arrayIllust.length))
@@ -43,7 +43,7 @@ userName
                + `\n` + `*TITLE*: ${illust.body.title}`
                + `\n` + `*DESCRIPTION*: ${illust.body.description}`
                + `\n` + `*VIEWER*: ${illust.body.viewCount}`
-               + `\n` + `*AUTHOR*: ${userName}`
+               + `\n` + `*AUTHOR*: ${illust.bodyuserName}`
                + `\n` + `*POST*: https://www.pixiv.net/artworks/${arrayIllust[random].id}`
         client.sendMessage(data.from, { image: res.data, caption: teksP }, { quoted: data.chat })
     } catch (e) {
