@@ -2,7 +2,12 @@ const command = async (data) => {
     try {
 
     } catch (e) {
-      console.log(e);
+        logger.error(e)
+        client.sendMessage(data.from, {
+            text: util.format(e)
+        }, {
+            quoted: data.chat
+        })
     }
 };
 //PERMISSION
@@ -32,7 +37,7 @@ command.need = {
 command.name = '';
 command.help = [''];
 command.tags = [''];
-command.use = (/^s$/i);
+command.use = (/^$/i);
 
 //OPTION
 command.disable = false;

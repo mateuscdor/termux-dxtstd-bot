@@ -1,7 +1,7 @@
 const fs = require('fs')
 const util = require('util');
 const scrapper = require(dir.lib + 'scrapper.js')
-const readmore = require(dir.lib + 'readmore.js')
+const readmore = require(dir.lib + 'readmore.js')q
 
 let command = async (data) => {
     try {
