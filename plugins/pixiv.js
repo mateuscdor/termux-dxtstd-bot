@@ -14,6 +14,9 @@ const command = async (data) => {
         const arrayIllust = hasil.body.illust.data
         
         const random = Math.floor(Math.random() * (arrayIllust.length > 50 ? 50: arrayIllust.length))
+        
+        
+        if (!arrayIllust[random]) return client.sendMessage(data.from, { text: " The keyword does not exist!" }, { quoted: data.chat });;
         let illust = await pixiv.illust(arrayIllust[random].id)
         
         const res = await axios({

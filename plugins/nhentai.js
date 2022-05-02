@@ -22,6 +22,11 @@ const command = async (data) => {
                     deviceScaleFactor: 1,
                 })
                 await pageBrowser.setDefaultNavigationTimeout(0);
+                await pageBrowser.setExtraHTTPHeaders({
+                    dnt: "1",
+                    cookie: "cf_clearance=DGLWkLJViv5ZctDFh4j00yFe442Csd6.WuRVC9BewWs-1651403923-0-150; csrftoken=OtZNzYoaiQ2DKAiGyhMH31zALRDHgfXXenYhURuRGe5At9hnYgt0HtHUB1Y4OMxZ", 
+                    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36" 
+                })
                 await pageBrowser.goto(URL)
                 let screenshot = await pageBrowser.screenshot()
 
