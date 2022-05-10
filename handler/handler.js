@@ -43,7 +43,7 @@ module.exports = async (chat) => {
             fs.writeFileSync(path.join(dir.database, 'groups.json'), JSON.stringify(global.db.groups, null, '\t'));
         }
         
-        const isOwner = (sender.split("@")[0] === config.owner.noPhone);
+        const isOwner = (sender.split("@")[0] === config.owner.noPhone) || sender.split("@")[0] === config.coowner.noPhone || false;
         const isAdmin = '';
         const isSAdmin = '';
         const isBAdmin = '';

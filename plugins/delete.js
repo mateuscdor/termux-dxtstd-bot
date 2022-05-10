@@ -6,7 +6,7 @@ let command = async (data) => {
         let mesej = data.chat.message.quoted()
         if (!mesej.key) return result = "Reply pesan nya!"
         if (!mesej.key.fromMe) return result = "Pesan bukan dari bot!"
-        client.sendMessage(data.from, { delete: mesej.key })
+        await client.sendMessage(data.from, { delete: mesej.key })
         result = "Berhasil menghapus pesan!"
     } catch (e) {
         result = e
