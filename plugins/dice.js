@@ -3,7 +3,7 @@ const util = require('util')
 
 const command = async (data) => {
     try {
-         let random = Math.floor(Math.random() * 6)
+         let random = Math.floor((Math.random() * 5) + 1)
          let dice = fs.readFileSync(dir.assets + 'dice' + '/' + random + '.webp')
          
          client.sendMessage(data.from, { sticker: dice }, { quoted: data.chat })
