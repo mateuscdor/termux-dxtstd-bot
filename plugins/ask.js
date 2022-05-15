@@ -7,8 +7,8 @@ const command = async (data) => {
          let random = Math.floor((Math.random() * answer.length))
          
          let teks = `
-*Question: ${data.args.join(" ")}*
-*Answer: ${answer[random]}`.trimStart()
+*Question:* ${data.args.join(" ")}
+*Answer:* ${answer[random]}`.trimStart()
          client.sendMessage(data.from, { text: teks }, { quoted: data.chat })
     } catch (e) {
         logger.error(e)
