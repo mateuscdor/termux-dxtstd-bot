@@ -4,6 +4,11 @@ const cp = require('child_process')
 const util = require('util')
 const fs = require('fs')
 const fetcher = require('../lib/fetcher.js')
+const yts = require('yt-search')
+
+const URL = function (url) {
+     return /https?:\/\/(www\.)?youtube/.test(url)
+}
 
 const command = async (data) => {
     try {
@@ -11,11 +16,16 @@ const command = async (data) => {
             mp3: "mp3",
             mp4: "mp4",
             audio: "mp3",
-            videoo: "mp4"
+            video: "mp4"
         }
         
         if (format[data.args[0]]) {
-            let linkYT = (data.args).slice(1)[0]
+            let linkYT = (data.args).slice(1)
+            
+            if (!URL(linkYT)) {
+                let result = await yts(linkYT.join(" "))
+                linkYT = result.all[0].url
+            } else linkYT = linkYT[0]
             if (!linkYT) return
             
             const ytInfo = await ytdl.getInfo(linkYT)
