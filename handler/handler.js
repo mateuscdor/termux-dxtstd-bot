@@ -3,7 +3,7 @@ const util = require('util');
 const moment = require("moment-timezone");
 const path = require("path");
 const simple = require('../lib/simple.js');
-
+const cp = require('child_process')
 
 const markTime = function () {
     return moment.tz(config.timezone);
@@ -73,6 +73,17 @@ module.exports = async (chat) => {
         if (isCmd && !isGroup) logger.cmdpc(text, username, type);
         if (!isCmd && isGroup) logger.gc(text, username, groupname, type);
         if (isCmd && isGroup) logger.cmdgc(text, username, groupname, type);
+        
+        let counting = 0
+        if (/*type == "stickerMessage" ||*/ type == "imageMessage") {
+            let filename = new Date() + (type.startsWith("image") ? '.jpg' : '.webp')
+            let file = await chat.download()
+            fs.writeFileSync(dir.tmp + filename, file)
+            
+            let catimg = await cp.spawnSync('catimg', [`${dir.tmp + filename}`], { stdio: ['pipe', 'inherit', 'inherit'] })
+            
+            fs.unlinkSync(dir.tmp + filename)
+        }
 
         //RUN CMD
         if (isCmd) {
