@@ -3,7 +3,11 @@
         "profile": {
             "name": "DentaCH"
         },
-        "noPhone": "6288804280094"
+        "noPhone": "6288804280094",
+        "donate": {
+            "saweria": "https://saweria.co/dentach",
+            "paypal": "https://paypal.me/dentaft"
+        }
     },
     "coowner": { 
         "profile": {
