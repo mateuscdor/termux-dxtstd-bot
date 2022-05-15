@@ -83,7 +83,7 @@ command.need = {
 };
 //INFO
 command.name = 'Pixiv';
-command.help = ['pixiv'].map(v => v + "*<keyword>*");
+command.help = ['pixiv'].map(v => v + " *<keyword>*");
 command.tags = ['downloader'];
 command.use = (/^pixiv$/i);
 
