@@ -41,7 +41,7 @@ command.need = {
 };
 //INFO
 command.name = 'Dice';
-command.help = ['dice'].map(v => '');
+command.help = ['dice'].map(v => v + ' ');
 command.tags = ['games'];
 command.use = (/^dice$/i);
 
