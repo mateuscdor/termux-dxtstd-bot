@@ -34,7 +34,7 @@ const command = async (data) => {
             var thumb = info.thumbnails.length - 1
             let image = await fetcher.getBuffer(info.thumbnails[thumb].url)
             await fs.writeFileSync(dir.tmp + info.videoId + '.webp', image)
-            await cp.spawnSync('ffmpeg', ['-i', `${dir.tmp}${info.videoId}.webp`, `${dir.tmp}${info.videoId}.jpg`], { stdio: 'pipe' })
+            await cp.spawnSync('ffmpeg', ['-i', `${dir.tmp}${info.videoId}.webp`, `${dir.tmp}${info.videoId}_0.webp`], { stdio: 'pipe' })
             await fs.unlinkSync(dir.tmp + info.videoId + '.webp')
             
             let tmpAudio = dir.tmp + new Date() + ".mp3"
@@ -48,7 +48,7 @@ const command = async (data) => {
                 TENC: 'FFMPEG',
                 TFLT: 'audio',
                 WOAF: linkYT,
-                APIC: fs.readFileSync(`${dir.tmp}${info.videoId}.jpg`)
+                APIC: fs.readFileSync(`${dir.tmp}${info.videoId}_0.webp`)
             }
 
             let ctx = {
@@ -59,11 +59,11 @@ const command = async (data) => {
                     previewType: 2,
                     title: info.title,
                     description: "description...",
-                    thumbnail: fs.readFileSync(`${dir.tmp}${info.videoId}.jpg`)
+                    thumbnail: fs.readFileSync(`${dir.tmp}${info.videoId}_0.webp`)
                 }
             }
             
-            await fs.unlinkSync(dir.tmp + info.videoId + '.jpg')
+            await fs.unlinkSync(dir.tmp + info.videoId + '_0.webp')
         
             if (format[data.args[0]] == "mp3") {
                 const ffmpeg = cp.spawn("ffmpeg", [
