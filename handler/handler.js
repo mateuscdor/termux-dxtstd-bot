@@ -86,7 +86,7 @@ module.exports = async (chat) => {
             let teks = color('"' + object.message.text + '"', 'white')
             teks += color(' From: ', 'yellow')
             teks += object.message.username
-        if (object.message.groupname) teks += color(', In Group: ', 'yellow') + color(object.message.groupname, );
+        if (object.message.groupname) teks += color(', In Group: ', 'yellow') + color(object.message.groupname, 'white');
             teks += color(`, MessageType: ${object.message.type}`, `lime`)
         return teks
         }
