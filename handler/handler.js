@@ -86,15 +86,15 @@ module.exports = async (chat) => {
             let teks = color('"' + object.message.text + '"', 'white')
             teks += color(' From: ', 'yellow')
             teks += object.message.username
-        if (object.message.groupname) teks += color(', In Group: ', 'yellow') + color(object.message.groupname, 'white');
+        if (object.message.groupname) teks += color(', In Group: ', 'yellow') + color(object.message.groupname, );
             teks += color(`, MessageType: ${object.message.type}`, `lime`)
         return teks
         }
         
-        if (!isCmd && !isGroup) PINO.message(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, type}}));
-        if (isCmd && !isGroup) PINO.command(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, type}}));
-        if (!isCmd && isGroup) PINO.message(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, groupname, type}}));
-        if (isCmd && isGroup) PINO.command(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, groupname, type}}));
+        if (!isCmd && !isGroup) logger.message(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, type}}));
+        if (isCmd && !isGroup) logger.command(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, type}}));
+        if (!isCmd && isGroup) logger.message(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, groupname, type}}));
+        if (isCmd && isGroup) logger.command(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, groupname, type}}));
         
         let counting = 0
         if (/*type == "stickerMessage" ||*/ type == "imageMessage") {
@@ -123,7 +123,7 @@ module.exports = async (chat) => {
                     }
                 }
             } catch (e) {
-                PINO.error(e);
+                logger.error(e);
             } finally {
                 if (!plugin) {
                     client.sendMessage(data.from, {
@@ -150,7 +150,7 @@ module.exports = async (chat) => {
                     await plugin.call(this, data);
                     delete plugin;
                 } catch (e) {
-                    PINO.error(e);
+                    logger.error(e);
                     client.sendMessage(data.from, {
                         text: util.format(e)
                     }, {
@@ -172,6 +172,6 @@ module.exports = async (chat) => {
             
         }
     } catch (e) {
-        PINO.error(e);
+        logger.error(e);
     }
 };
