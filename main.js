@@ -27,7 +27,7 @@ const util = require('util');
 const moment = require("moment-timezone");
 const path = require("path");
 const os = require("os");
-const pino = require('pino');
+const logger = require('logger');
 const chalk = require('chalk');
 
 //LOCAL MODULE
@@ -58,56 +58,6 @@ const config = global.config = JSON.parse(
         )
     )
 );
-
-//COLOR CHALK
-const color = (text, color) => {
-    return !color ? chalk.green(text) : chalk.keyword(color)(text)
-}
-
-const bgcolor = (text, bgcolor) => {
-    return !bgcolor ? chalk.green(text) : chalk.bgKeyword(bgcolor)(text)
-}
-
-
-//LOGGER
-const pinoLevel = function (logLevel) {
-    if (logLevel == 10) {
-        return color(("[  " + "TRACE" + "  ]"), 'yellow')
-    } else if (logLevel == 20) {
-        return color(("[  " + "DEBUG" + "  ]"), 'yellow')
-    } else if (logLevel == 30) {
-        return color(("[  " + "INFO" + "  ]"), 'lime')
-    } else if (logLevel == 40) {
-        return color(("[  " + "WARN" + "  ]"), 'yellow')
-    } else if (logLevel == 50) {
-        return color(("[  " + "ERROR" + "  ]"), 'red')
-    } else if (logLevel == 60) {
-        return bgcolor(("[  " + "FATAL" + "  ]"), 'red')
-    } else {
-        return color(("[  " + "USERLVL" + "  ]"), 'white')
-    }
-}
-
-
-const customPino = {
-    time: timestamp => moment.tz(config.timezone).format('HH:mm:ss'),
-    level: levelLog => pinoLevel(levelLog)
-}
-
-const msgFormatPino = function (logPino) {
-    //console.log(logPino)
-    return logPino.msg
-}
-
-const PINO = pino({
-    prettyPrint: {
-        levelFirst: false,
-        colorize: true,
-        ignore: 'pid,hostname',
-        messageFormat: msgFormatPino,
-        customPrettifiers: customPino
-    }
-})
 
 const logger = global.logger = require('./lib/logger');
 
@@ -162,18 +112,18 @@ global.loadPlugin = function () {
             if (pluginLoading.support && pluginLoading.support[os.platform()]) {
                 global.plugins[filename] = pluginLoading
             } else {
-                PINO.error(`Plugin ${filename.split('.')[0]} Does'nt support in your OS`)
+                logger.error(`Plugin ${filename.split('.')[0]} Does'nt support in your OS`)
             }
             
             if (pluginLoading.beta) {
-                PINO.warn(`Plugin ${filename.split('.')[0]} still in beta, there may be errors when running`)
+                logger.warn(`Plugin ${filename.split('.')[0]} still in beta, there may be errors when running`)
             }
             
             if (pluginLoading.disable) {
-                PINO.warn(`Plugin ${filename.split('.')[0]} is disable! for reason check the script`)
+                logger.warn(`Plugin ${filename.split('.')[0]} is disable! for reason check the script`)
             }
         } catch (e) {
-            PINO.error(`[PLUGIN ${filename}] `, util.format(e));
+            logger.error(`[PLUGIN ${filename}] `, util.format(e));
             delete global.plugins[filename];
         }
     }
@@ -182,7 +132,7 @@ global.loadPlugin = function () {
 //START API
 startClient = function () {
     const starting = baileys.default({
-        logger: PINO,
+        logger: logger,
         printQRInTerminal: true,
         auth: loadAuth(),
         version: [2, 2281, 0]
@@ -223,23 +173,23 @@ const start = async () => {
         client.ev.on('connection.update',
             (update) => {
                 if (update.qr) {
-                    return logger.qr();
+                    return logger.info("Scan this QR");
                 }
                 if (update.connection === 'close') {
                     fs.writeFileSync("./log/connection/closed.json", JSON.stringify(update, null, "\t"));
                     console.log(update);
                     statusCode = update.lastDisconnect.error.output ? update.lastDisconnect.error.output.statusCode: undefined;
-                    logger.disconnect(`Code ${statusCode} ${baileys.DisconnectReason[`${statusCode}`]}`);
+                    logger.error(`Disconnect... ${statusCode} ${baileys.DisconnectReason[`${statusCode}`]}`);
                     // reconnect if not logged out
                     if (statusCode !== baileys.DisconnectReason.loggedOut) {
                         delete global.client;
                         delete client;
-                        logger.reconnect();
+                        logger.info("Trying reconnecting...");
                         start();
                     }
                 }
                 if (update.connection === "open") {
-                    logger.connected();
+                    logger.info('Success Connected..');
                     fs.writeFileSync("./log/connection/open.json", JSON.stringify(update, null, "\t"));
                 }
                 return client

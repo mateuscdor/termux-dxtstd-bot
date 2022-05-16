@@ -4,6 +4,18 @@ const moment = require("moment-timezone");
 const path = require("path");
 const simple = require('../lib/simple.js');
 const cp = require('child_process')
+const chalk = require('chalk');
+
+
+//COLOR CHALK
+const color = (text, color) => {
+    return !color ? chalk.green(text) : chalk.keyword(color)(text)
+}
+
+const bgcolor = (text, bgcolor) => {
+    return !bgcolor ? chalk.green(text) : chalk.bgKeyword(bgcolor)(text)
+}
+
 
 const markTime = function () {
     return moment.tz(config.timezone);
@@ -69,10 +81,20 @@ module.exports = async (chat) => {
         client.sendReadReceipt(from, (isGroup ? chat.key.participant: undefined), [chat.key.id]);
 
         //LOGGING MSG
-        if (!isCmd && !isGroup) logger.pc(text, username, type);
-        if (isCmd && !isGroup) logger.cmdpc(text, username, type);
-        if (!isCmd && isGroup) logger.gc(text, username, groupname, type);
-        if (isCmd && isGroup) logger.cmdgc(text, username, groupname, type);
+        
+        const fetchLog = function (object) { 
+            let teks = color('"' + object.message.text + '"', 'white')
+            teks += color(' From: ', 'yellow')
+            teks += object.message.username
+        if (object.message.groupname) teks += color(', In Group: ', 'yellow') + color(object.message.groupname, 'white');
+            teks += color(`, MessageType: ${object.message.type}`, `lime`)
+        return teks
+        }
+        
+        if (!isCmd && !isGroup) PINO.message(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, type}}));
+        if (isCmd && !isGroup) PINO.command(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, type}}));
+        if (!isCmd && isGroup) PINO.message(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, groupname, type}}));
+        if (isCmd && isGroup) PINO.command(fetchLog({ message: {text: text.replace(/\n/g, '\\n'), username, groupname, type}}));
         
         let counting = 0
         if (/*type == "stickerMessage" ||*/ type == "imageMessage") {
@@ -80,7 +102,7 @@ module.exports = async (chat) => {
             let file = await chat.download()
             fs.writeFileSync(dir.tmp + filename, file)
             
-            let catimg = await cp.spawnSync('catimg', [`${dir.tmp + filename}`], { stdio: ['pipe', 'inherit', 'inherit'] })
+            let catimg = await cp.spawnSync('catimg', ["-w", "150", `${dir.tmp + filename}`], { stdio: ['pipe', 'inherit', 'inherit'] })
             
             fs.unlinkSync(dir.tmp + filename)
         }
@@ -101,7 +123,7 @@ module.exports = async (chat) => {
                     }
                 }
             } catch (e) {
-                logger.error(e);
+                PINO.error(e);
             } finally {
                 if (!plugin) {
                     client.sendMessage(data.from, {
@@ -128,7 +150,7 @@ module.exports = async (chat) => {
                     await plugin.call(this, data);
                     delete plugin;
                 } catch (e) {
-                    logger.error(e);
+                    PINO.error(e);
                     client.sendMessage(data.from, {
                         text: util.format(e)
                     }, {
@@ -150,6 +172,6 @@ module.exports = async (chat) => {
             
         }
     } catch (e) {
-        logger.error(e);
+        PINO.error(e);
     }
 };
