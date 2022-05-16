@@ -27,7 +27,6 @@ const util = require('util');
 const moment = require("moment-timezone");
 const path = require("path");
 const os = require("os");
-const logger = require('logger');
 const chalk = require('chalk');
 
 //LOCAL MODULE
