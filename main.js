@@ -81,7 +81,7 @@ const loadAuth = function () {
         if (!fs.existsSync(authPath))
             return logger.existnt();
 
-        logger.load();
+        logger.info('Load auth...');
         auth = baileys.useSingleFileAuthState(authPath)
     } catch (e) {
         logger.error("Load auth error!");
