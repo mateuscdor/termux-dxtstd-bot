@@ -6,4 +6,4 @@ const start = function (file: string, opts: Object={}) {
     })
 }
 
-start('./src/system/client.ts')
+start('./src/system/index.ts')

@@ -22,12 +22,9 @@ const startClient = function () {
     return makeWASocket(opts)
 }
 
-const start = async function () {
-    const client = global.client = startClient()
-    client.ev.on('creds.update', () => {
-        saveAuth(client.authState, pathAuth)
-    })
-    return client
+export { 
+    startClient,
+    saveAuth,
+    loadAuth,
+    pathAuth
 }
-
-start()
