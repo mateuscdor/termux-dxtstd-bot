@@ -13,7 +13,7 @@ const coloringBGText = function (text: string, color: string) {
 const colors = ['red', 'white', 'black', 'blue', 'yellow', 'green', 'aqua', 'cyan']
 
 //LOGGER
-const pinoLevel = function (logLevel) {
+const pinoLevel = function (logLevel: any) {
     if (logLevel == 31) {
         return coloringText("[  " + "MESSAGE" + "  ]", 'cyan')
     } else if (logLevel == 32) {
@@ -41,11 +41,11 @@ const pinoLevel = function (logLevel) {
 
 
 const customPino = {
-    time: timestamp => moment.tz("Asia/Makassar").format('HH:mm:ss'),
-    level: levelLog => pinoLevel(levelLog)
+    time: (timestamp: any) => moment.tz("Asia/Makassar").format('HH:mm:ss'),
+    level: (levelLog: any) => pinoLevel(levelLog) 
 }
 
-const msgFormatPino = function (logPino) {
+const msgFormatPino = function (logPino: any) {
     //console.log(logPino)
     let msg = logPino.msg
     return msg

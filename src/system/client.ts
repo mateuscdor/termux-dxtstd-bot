@@ -1,5 +1,6 @@
 import makeWASocket, { useSingleFileAuthState, BufferJSON, DEFAULT_CONNECTION_CONFIG } from "@adiwajshing/baileys"
 import * as fs from "fs"
+import { logger } from "../../lib/logger"
 
 let pathAuth = '/home/DentaCH/bot/dxtstd-bot/auth.json'
 
@@ -17,7 +18,8 @@ const startClient = function () {
     const opts = {
         auth: loadAuth(pathAuth),
         printQRInTerminal: true,
-        version: DEFAULT_CONNECTION_CONFIG.version
+        version: DEFAULT_CONNECTION_CONFIG.version,
+        logger: logger
     } as any
     return makeWASocket(opts)
 }
