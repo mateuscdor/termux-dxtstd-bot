@@ -1,14 +1,15 @@
 import * as fs from "fs"
+import * as path from "path"
 
-let path_db = "../../database/"
+let path_db = path.join(__dirname, '..', '..', 'database/')
 let path_db_user = path_db + "users.json"
 let path_db_group = path_db + "groups.json"
 
 const db = {} as any
-      db.users = JSON.parse(String(fs.readFileSync(path_db_user)))
-      db.groups = JSON.parse(String(fs.readFileSync(path_db_group)))
+      db.users = JSON.parse(String(fs.readFileSync(path_db_user))) 
+      db.groups = JSON.parse(String(fs.readFileSync(path_db_group))) 
 
-const saveDB = function (db: Object, type: string) {
+const saveDB = function (db: object, type: string) {
     switch (type) {
         case 'user':
         case 'users': 
@@ -25,5 +26,5 @@ const saveDB = function (db: Object, type: string) {
 
 export {
     saveDB,
-    db
+    db as database
 }

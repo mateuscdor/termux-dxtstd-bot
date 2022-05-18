@@ -9,7 +9,7 @@ const loadAuth = function (file: string) {
     return state
 }
 
-const saveAuth =  function (auth: Object, file: string) {
+const saveAuth =  function (auth: object, file: string) {
     file = file || "./auth.json"
     fs.writeFileSync(file, JSON.stringify(auth, BufferJSON.replacer))
 }

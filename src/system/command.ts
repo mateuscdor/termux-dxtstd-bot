@@ -2,7 +2,7 @@ import * as fs from "fs"
 import * as path from "path"
 import { logger } from '../../lib/logger'
 
-const commands = []
+const commands = [] as any
 const file = fs.readdirSync('../commands/').filter(filename => filename.endsWith('.ts'))
 for (let i in file) {
     try { 
