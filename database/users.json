@@ -131,6 +131,13 @@
 			"command": {
 				"last": ""
 			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
 		}
 	},
 	"6285968309194@s.whatsapp.net": {
@@ -160,6 +167,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -258,6 +272,13 @@
 			"command": {
 				"last": ""
 			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
 		}
 	},
 	"6285765421707@s.whatsapp.net": {
@@ -354,6 +375,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -458,6 +486,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -585,6 +620,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -780,6 +822,13 @@
 			"command": {
 				"last": ""
 			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
 		}
 	},
 	"6285221733884@s.whatsapp.net": {
@@ -846,6 +895,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -914,6 +970,13 @@
 			"command": {
 				"last": ""
 			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
 		}
 	},
 	"6282251752737@s.whatsapp.net": {
@@ -943,6 +1006,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -1078,6 +1148,13 @@
 			"command": {
 				"last": ""
 			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
 		}
 	},
 	"6281215160977@s.whatsapp.net": {
@@ -1181,6 +1258,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -2049,6 +2133,13 @@
 			"command": {
 				"last": ""
 			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
 		}
 	},
 	"628990087052@s.whatsapp.net": {
@@ -2078,6 +2169,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -2139,6 +2237,13 @@
 			"command": {
 				"last": ""
 			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
 		}
 	},
 	"628881110340@s.whatsapp.net": {
@@ -2168,6 +2273,13 @@
 			"donate": {},
 			"command": {
 				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
 			}
 		}
 	},
@@ -2421,6 +2533,13 @@
 			"command": {
 				"last": ""
 			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
 		}
 	},
 	"6288299318149@s.whatsapp.net": {
@@ -2428,6 +2547,4287 @@
 		"profile": {
 			"name": {
 				"notify": "ame",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285240857245@s.whatsapp.net": {
+		"id": "6285240857245@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "dxtstd",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6282298057322@s.whatsapp.net": {
+		"id": "6282298057322@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Rizky Caniago",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289678559821@s.whatsapp.net": {
+		"id": "6289678559821@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Winston Churchill",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285664761585@s.whatsapp.net": {
+		"id": "6285664761585@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Ar",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285788871677@s.whatsapp.net": {
+		"id": "6285788871677@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Danz",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289632196924@s.whatsapp.net": {
+		"id": "6289632196924@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Hamzz",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281247535121@s.whatsapp.net": {
+		"id": "6281247535121@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "4ji",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285746017091@s.whatsapp.net": {
+		"id": "6285746017091@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "SOEHARTO",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285657244429@s.whatsapp.net": {
+		"id": "6285657244429@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Agikuu",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281524441537@s.whatsapp.net": {
+		"id": "6281524441537@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "aris",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6285394423084@s.whatsapp.net": {
+		"id": "6285394423084@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Rafky Maulana",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6281236031617@s.whatsapp.net": {
+		"id": "6281236031617@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Vnia",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281218216669@s.whatsapp.net": {
+		"id": "6281218216669@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Panggilan Gw Zhak",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6287864598751@s.whatsapp.net": {
+		"id": "6287864598751@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Xsus🤨📸",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283123365377@s.whatsapp.net": {
+		"id": "6283123365377@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "フィトラ",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281373427744@s.whatsapp.net": {
+		"id": "6281373427744@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Thomas Selebweeee",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281244065423@s.whatsapp.net": {
+		"id": "6281244065423@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "𝑆𝑎𝑛𝑛",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6285784980281@s.whatsapp.net": {
+		"id": "6285784980281@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "andra",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289656293444@s.whatsapp.net": {
+		"id": "6289656293444@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Wa error",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289505144770@s.whatsapp.net": {
+		"id": "6289505144770@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "RAM~TEMPEST",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6281329564312@s.whatsapp.net": {
+		"id": "6281329564312@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "ɴʏᴏɴɢ",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6282132078215@s.whatsapp.net": {
+		"id": "6282132078215@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Rofiq",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6288267175726@s.whatsapp.net": {
+		"id": "6288267175726@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Yumeko",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283121264271@s.whatsapp.net": {
+		"id": "6283121264271@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "²⁸",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283879764309@s.whatsapp.net": {
+		"id": "6283879764309@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Faris~",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62895403207651@s.whatsapp.net": {
+		"id": "62895403207651@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "BADAKPUNAH",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281211287122@s.whatsapp.net": {
+		"id": "6281211287122@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Yan",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281393319321@s.whatsapp.net": {
+		"id": "6281393319321@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "qyra",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"628873427642@s.whatsapp.net": {
+		"id": "628873427642@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "ajus",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281807427178@s.whatsapp.net": {
+		"id": "6281807427178@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "No",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6287713435572@s.whatsapp.net": {
+		"id": "6287713435572@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "dxyz",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282145147298@s.whatsapp.net": {
+		"id": "6282145147298@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Shiro",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289697529911@s.whatsapp.net": {
+		"id": "6289697529911@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "doel",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6285954758077@s.whatsapp.net": {
+		"id": "6285954758077@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Y R U G",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62895337769909@s.whatsapp.net": {
+		"id": "62895337769909@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "『It's me Adianto』",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6283857720831@s.whatsapp.net": {
+		"id": "6283857720831@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "einzatshu",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283180424515@s.whatsapp.net": {
+		"id": "6283180424515@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "NAI",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281256487696@s.whatsapp.net": {
+		"id": "6281256487696@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "apip.",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62895384608073@s.whatsapp.net": {
+		"id": "62895384608073@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Samuel Putra",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6282211360572@s.whatsapp.net": {
+		"id": "6282211360572@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Feri",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62823364848800@s.whatsapp.net": {
+		"id": "62823364848800@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Kirigaya Shou",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281241734776@s.whatsapp.net": {
+		"id": "6281241734776@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "ʀᴀɴᴅsᴛ Slebew 🥶🥶",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283842560363@s.whatsapp.net": {
+		"id": "6283842560363@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Cak Top - 𝕏 🄷🄰🅂 𝖋𝖆𝖑𝖑𝖊𝖓",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283818305887@s.whatsapp.net": {
+		"id": "6283818305887@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "\"Rendi\"P",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"628388118896@s.whatsapp.net": {
+		"id": "628388118896@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Taufik Arfiansyah💞",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283841206456@s.whatsapp.net": {
+		"id": "6283841206456@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Lyzx Forger`タ",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281284198141@s.whatsapp.net": {
+		"id": "6281284198141@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "-",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"628112638199@s.whatsapp.net": {
+		"id": "628112638199@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Ghulam 💀",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62881024241759@s.whatsapp.net": {
+		"id": "62881024241759@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": ".",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281282199344@s.whatsapp.net": {
+		"id": "6281282199344@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "dxtstd",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282225470597@s.whatsapp.net": {
+		"id": "6282225470597@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Zacky",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"62895326031212@s.whatsapp.net": {
+		"id": "62895326031212@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Law",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6281537442307@s.whatsapp.net": {
+		"id": "6281537442307@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Hanz",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281336682336@s.whatsapp.net": {
+		"id": "6281336682336@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Neutral Zaps",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285828612334@s.whatsapp.net": {
+		"id": "6285828612334@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Ctxy.",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281390953351@s.whatsapp.net": {
+		"id": "6281390953351@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "آقای جی",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285727470081@s.whatsapp.net": {
+		"id": "6285727470081@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Pacar gelapmu",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62895346938200@s.whatsapp.net": {
+		"id": "62895346938200@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "sanz",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6287882076756@s.whatsapp.net": {
+		"id": "6287882076756@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "HanzzBot",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283104802587@s.whatsapp.net": {
+		"id": "6283104802587@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Ucpp",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6281357963789@s.whatsapp.net": {
+		"id": "6281357963789@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "꧁♕︎𝕶𝖎𝖓𝖌❁𝕱𝖊𝖆𝖗𝕷𝖊𝖘𝖘♕︎꧂",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283819671299@s.whatsapp.net": {
+		"id": "6283819671299@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "ㅤㅤ",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6288804358103@s.whatsapp.net": {
+		"id": "6288804358103@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Vian",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"628981155180@s.whatsapp.net": {
+		"id": "628981155180@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": " ",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285694027312@s.whatsapp.net": {
+		"id": "6285694027312@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "MuhammadAprizal",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281268773274@s.whatsapp.net": {
+		"id": "6281268773274@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Akuwusi Ngaret",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6287785651505@s.whatsapp.net": {
+		"id": "6287785651505@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Ary",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285711306287@s.whatsapp.net": {
+		"id": "6285711306287@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Adelia Anna Najma",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281323946746@s.whatsapp.net": {
+		"id": "6281323946746@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "deega",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285691270321@s.whatsapp.net": {
+		"id": "6285691270321@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "yn",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62882001211007@s.whatsapp.net": {
+		"id": "62882001211007@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Dini",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6288297870411@s.whatsapp.net": {
+		"id": "6288297870411@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Hei",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285709010273@s.whatsapp.net": {
+		"id": "6285709010273@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Anisa",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6282249941218@s.whatsapp.net": {
+		"id": "6282249941218@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "M Rusdaniyansyah",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6287779117807@s.whatsapp.net": {
+		"id": "6287779117807@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Raditya Putra Mahardika",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285840933161@s.whatsapp.net": {
+		"id": "6285840933161@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Pika Suwandi",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285820459336@s.whatsapp.net": {
+		"id": "6285820459336@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "~~~~~~",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283162941649@s.whatsapp.net": {
+		"id": "6283162941649@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "srh",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285753152605@s.whatsapp.net": {
+		"id": "6285753152605@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Ky",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6285695110685@s.whatsapp.net": {
+		"id": "6285695110685@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Azkaa",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285821897316@s.whatsapp.net": {
+		"id": "6285821897316@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "🍃",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282290408085@s.whatsapp.net": {
+		"id": "6282290408085@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "AFIQ",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282131537613@s.whatsapp.net": {
+		"id": "6282131537613@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Habib",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289523564649@s.whatsapp.net": {
+		"id": "6289523564649@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Fernando",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282152580586@s.whatsapp.net": {
+		"id": "6282152580586@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "dimas",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281574893026@s.whatsapp.net": {
+		"id": "6281574893026@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "liani",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285879448495@s.whatsapp.net": {
+		"id": "6285879448495@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Nrmaalfna",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285215668537@s.whatsapp.net": {
+		"id": "6285215668537@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Hyuuxu_",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6287724225921@s.whatsapp.net": {
+		"id": "6287724225921@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Sxzy",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6285716795325@s.whatsapp.net": {
+		"id": "6285716795325@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": ".",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62882009404789@s.whatsapp.net": {
+		"id": "62882009404789@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "juni",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283801345185@s.whatsapp.net": {
+		"id": "6283801345185@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Fan",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6285775481688@s.whatsapp.net": {
+		"id": "6285775481688@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "꧁𝓢𝓪𝓹𝓾𝓽𝓻𝓪𝓮𝓴𝓪 ꧂",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283816289499@s.whatsapp.net": {
+		"id": "6283816289499@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "secret🌻❤‍🩹",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281779878883@s.whatsapp.net": {
+		"id": "6281779878883@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "XΣNOM DΣFROST",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282299082445@s.whatsapp.net": {
+		"id": "6282299082445@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Xeos ? Im Fire",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285298899622@s.whatsapp.net": {
+		"id": "6285298899622@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "✓✓",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281340142693@s.whatsapp.net": {
+		"id": "6281340142693@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "kenape?",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282113561762@s.whatsapp.net": {
+		"id": "6282113561762@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "yntkts",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281343238149@s.whatsapp.net": {
+		"id": "6281343238149@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "No Name",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6289668366137@s.whatsapp.net": {
+		"id": "6289668366137@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "𝙄𝙣𝙞𝙨𝙞𝙖𝙡 𝘼",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6281398545685@s.whatsapp.net": {
+		"id": "6281398545685@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": ";;;;",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"62882005107945@s.whatsapp.net": {
+		"id": "62882005107945@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "~Gentur Aji Pangestu~",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282135250846@s.whatsapp.net": {
+		"id": "6282135250846@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "SanZ",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281522832673@s.whatsapp.net": {
+		"id": "6281522832673@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Inad_",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"62895389922361@s.whatsapp.net": {
+		"id": "62895389922361@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Adi hirohito Archiviste",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6282142980465@s.whatsapp.net": {
+		"id": "6282142980465@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Ayy",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6288268123137@s.whatsapp.net": {
+		"id": "6288268123137@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "ㅤㅤㅤㅤㅤㅤㅤㅤㅤ",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6281386292318@s.whatsapp.net": {
+		"id": "6281386292318@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "cibol`",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6287832793486@s.whatsapp.net": {
+		"id": "6287832793486@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "F~",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289516406011@s.whatsapp.net": {
+		"id": "6289516406011@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Afrmnsyh0508.",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"628990860861@s.whatsapp.net": {
+		"id": "628990860861@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "~vini Rahadi Jr.",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6283102026129@s.whatsapp.net": {
+		"id": "6283102026129@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Society",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285858150916@s.whatsapp.net": {
+		"id": "6285858150916@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Hahaha",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289692765240@s.whatsapp.net": {
+		"id": "6289692765240@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Iriyasuへんたい",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6281284309304@s.whatsapp.net": {
+		"id": "6281284309304@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Daruma",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6289669721809@s.whatsapp.net": {
+		"id": "6289669721809@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Pitt",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285654781709@s.whatsapp.net": {
+		"id": "6285654781709@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "K'naya",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		}
+	},
+	"6285783417029@s.whatsapp.net": {
+		"id": "6285783417029@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Restu",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6289530449856@s.whatsapp.net": {
+		"id": "6289530449856@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "Lang",
+				"contact": ""
+			}
+		},
+		"status": {
+			"verified": false,
+			"banned": false,
+			"premium": {
+				"active": false,
+				"expired": 0
+			}
+		},
+		"level": 1,
+		"exp": {
+			"current": 0,
+			"need": 0
+		},
+		"cash": 0,
+		"history": {
+			"purchase": {},
+			"donate": {},
+			"command": {
+				"last": ""
+			}
+		},
+		"is": {
+			"owner": false,
+			"admin": {
+				"super": false,
+				"normal": false
+			}
+		}
+	},
+	"6285624359723@s.whatsapp.net": {
+		"id": "6285624359723@s.whatsapp.net",
+		"profile": {
+			"name": {
+				"notify": "pt",
 				"contact": ""
 			}
 		},
