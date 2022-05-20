@@ -33,7 +33,6 @@ const is = function IsChat(this: any, chat: any) {
 
 export function SimpleChat (this: any, chat: any, client: any) {
     chat = chat.messages ? chat.messages[0] : {}
-    console.log(chat)
     const message = chat.message
     if (!message) return
     

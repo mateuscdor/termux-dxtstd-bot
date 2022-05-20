@@ -15,11 +15,13 @@ const start = async function () {
     const client = startClient()
     globalThis.client = client
 
+    db.store.bind(client.ev)
+
     client.ev.on('creds.update', () => {
         saveAuth(client.authState, pathAuth)
     })
 
-    client.ev.on('messages.upsert', ReceiverMessageHandler)
+    client.ev.on('messages.upsert', (chat) => { ReceiverMessageHandler(chat); db.store.save() })
     client.ev.on('contacts.update', ContactsHandler)
 
     client.ev.on('connection.update', (update) => { 

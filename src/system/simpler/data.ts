@@ -52,6 +52,6 @@ export function SimpleData (this: any, chat: any) {
     } as any
     data.text.args = data.text.full.trim().split(/ +/).slice(1)
     data.text.body = data.text.args.join(' ')
-    data.text.command = data.text.full.slice(1).trim().split(/ +/).shift().toLowerCase()
+    data.text.command = (data.text.full.startsWith('%') ? data.text.full.slice(1).trim().split(/ +/).shift().toLowerCase() : undefined)
     return data
 }

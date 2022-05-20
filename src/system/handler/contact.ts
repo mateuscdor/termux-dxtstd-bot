@@ -7,6 +7,7 @@ export function ContactsHandler (contact) {
     if (!db.users[id]) { 
         const user = JSON.parse(String(fs.readFileSync(path.join(__dirname, '..', '..', '..', 'assets', 'newUser.json'))))
         user.id = id
+        user.uid = Object.keys(db.users).length
         user.profile.name.notify = contact[0].notify
         db.users[id] = user
     } else if (db.users[id]) {

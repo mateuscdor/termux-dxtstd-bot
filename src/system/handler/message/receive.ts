@@ -2,6 +2,15 @@ import { SimpleChat } from "../../simpler/message"
 import { logger } from '../../../../lib/logger'
 import * as util from "util"
 import { SimpleData } from "../../simpler/data";
+import chalk from "chalk"
+
+const coloringText = function (text: string, color: string) {
+    return !color ? chalk.keyword('white')(text) : chalk.keyword(color)(text)
+}
+
+const coloringBGText = function (text: string, color: string) {
+    return !color ? chalk.bgKeyword('white')(text) : chalk.bgKeyword(color)(text)
+}
 
 export async function ReceiverMessageHandler(chat: any) {
     try {
@@ -16,6 +25,22 @@ export async function ReceiverMessageHandler(chat: any) {
         if (chat.key.fromMe) return
         
         const data = SimpleData(chat)
+        const fetchLog = function (object: any) {
+            let text = coloringText('"' + object.text.full + '"', 'white')
+            text += coloringText(' From: ', 'yellow')
+            text += object.name.user
+            if (object.on.group) {
+                text += coloringText(' Group: ', 'yellow')
+                text += object.name.group
+            }
+            text += coloringText(' MessageType: ' + object.type, 'lime')
+            return text
+        }
+        
+
+        if (data.text.command) logger.command(fetchLog(data))
+        else logger.message(fetchLog(data))
+
         
         if (data.text.full.startsWith('/>')) {
             if (data.sender != "6288804280094@s.whatsapp.net") return;
@@ -30,7 +55,7 @@ export async function ReceiverMessageHandler(chat: any) {
             }
         }
 
-        console.log(data)
+        //console.log(data)
     } catch (error) {
         logger.error(error)
     }
