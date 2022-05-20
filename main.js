@@ -122,7 +122,7 @@ global.loadPlugin = function () {
                 logger.warn(`Plugin ${filename.split('.')[0]} is disable! for reason check the script`)
             }
         } catch (e) {
-            logger.error(`[PLUGIN ${filename}] `, util.format(e));
+            logger.error(e, `[PLUGIN ${filename}] `);
             delete global.plugins[filename];
         }
     }
