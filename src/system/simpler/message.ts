@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { downloadMediaMessage } from "@adiwajshing/baileys"
 import * as fs from "fs"
 
@@ -12,13 +13,11 @@ const isMedia = function (type: string) {
     return MEDIA[type] ? true : false
 }
 
-const MessageType = {
-    
-}
-
 const DownloadMessage = async function DownloadMessage(chat: any, opts: any={}) {
     if (!isMedia(chat.message.type)) return new Error()
+    
     const result = await downloadMediaMessage(chat, 'buffer', {})
+    if (opts.path) fs.writeFileSync(opts.path, result as any)
     return result
 }
 
@@ -37,14 +36,51 @@ export function SimpleChat (this: any, chat: any, client: any) {
     console.log(chat)
     const message = chat.message
     if (!message) return
-    message.type = Object.keys(message)[0] != 'messageContextInfo' ? Object.keys(message)[0] : Object.keys(message)[1]
+    
+    if (Object.keys(message)[0] == "senderKeyDistributionMessage") {
+        if (Object.keys(message)[1] == "messageContextInfo") {
+            message.type = Object.keys(message)[2]
+        } else message.type = Object.keys(message)[1]
+    } else message.type = Object.keys(message)[0]
     
     chat.is = new (is as any)(chat)
-    chat.download = async function(opts: any={}) {
-        return await DownloadMessage(chat, opts)
+    chat.download = async function(this: any, opts: any={}) {
+        return await DownloadMessage(this, opts)
     }
-    chat.quoted = function () {
+    chat.resend = async function (this: any, opts: any={}) {
+        const RJ = this.key.remoteJid || opts.remoteJid
+        return await client.relayMessage(RJ, this.message, { messageid: this.key.id })
+    }
+
+    chat.message.quoted = function () {
         if (!chat.is.quoted) return {}
+        const CQ = {} as any
+        const CQO = chat.message[chat.message.type].contextInfo
+        
+        //Quoted Key
+        const QK = {} as any
+        QK.id = CQO.stanzaId
+        
+        chat.key.remoteJid.endsWith('@g.us') ? (QK.remoteJid = chat.key.remoteJid, QK.participant = CQO.participant) : (QK.remoteJid = CQO.participant, QK.participant = undefined)
+        
+        QK.fromMe = false
+        CQ.key = QK
+        
+        //Quoted Message
+        CQ.message = CQO.quotedMessage
+        CQ.message.type = Object.keys(CQ.message)[0]
+        CQ.is = new (is as any)(CQ)
+
+
+        CQ.download = async function(this: any, opts: any={}) {
+            return await DownloadMessage(this, opts)
+        }
+        CQ.resend = async function (this: any, opts: any={}) {
+            const RJ = this.key.remoteJid || opts.remoteJid
+            return await client.relayMessage(RJ, this.message, { messageid: this.key.id })
+        }
+
+        return CQ
     }
 
     this.messages = [chat]

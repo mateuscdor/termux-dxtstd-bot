@@ -1,36 +1,38 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { logger } from "../../lib/logger"
 import { startClient, pathAuth, saveAuth } from "./client"
-import { ReceiverMessage } from "./handler/message/receive"
-import { database, saveDB } from "./database"
+import { ReceiverMessageHandler } from "./handler/message/receive"
+import { ContactsHandler } from "./handler/contact"
+import { database } from "./database"
+import { Boom } from '@hapi/boom'
 
-declare var db: any
+declare const db: any
+//declare const client: any
 globalThis.db = database
-db = database
-
-db.save = function (this: any, type: string) {
-    switch (type) {
-        case 'user':
-        case 'users': 
-            saveDB(this.users, 'user')
-            break
-        case 'group':
-        case 'groups':
-            saveDB(this.groups, 'group')
-            break
-        default: 
-            return
-    }
-} 
 
 const start = async function () {
+    try {
     const client = startClient()
+    globalThis.client = client
+
     client.ev.on('creds.update', () => {
         saveAuth(client.authState, pathAuth)
     })
 
-    client.ev.on('messages.upsert', ReceiverMessage)
+    client.ev.on('messages.upsert', ReceiverMessageHandler)
+    client.ev.on('contacts.update', ContactsHandler)
 
-    return client
+    client.ev.on('connection.update', (update) => { 
+        console.log(update)
+        if (update.connection == 'close') {
+            const statusCode = (update.lastDisconnect?.error as Boom)?.output?.statusCode
+            if (statusCode != 401) {
+                    start()
+                }
+            }
+        })
+        return client
+    } catch (error) { logger.error(error) }
 }
 
 start()

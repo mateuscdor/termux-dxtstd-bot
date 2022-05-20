@@ -1,12 +1,14 @@
-import * as fs from "fs"
-import * as path from "path"
-import { logger } from '../../lib/logger'
+import * as fs from 'fs';
+import * as path from 'path';
+import {logger} from '../../lib/logger';
 
-const commands = [] as any
-const file = fs.readdirSync('../commands/').filter(filename => filename.endsWith('.ts'))
-for (let i in file) {
+const commands = [] as any;
+const file = fs.readdirSync('../commands/').filter((filename) => {
+    filename.endsWith('.ts');
+});
+for (const i in file) {
     try { 
-        let command = require(path.join(__dirname, 'src', 'cmd', file[i]))
+        const command = import(path.join(__dirname, 'src', 'cmd', file[i]))
 
         commands.push(command)
     } catch (error) {

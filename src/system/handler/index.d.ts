@@ -1,5 +1,1 @@
-import { ReceiverMessage } from './message/receive'
-
-export {
-    ReceiverMessage
-}
+export * from './message/receive'
