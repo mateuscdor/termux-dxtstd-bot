@@ -42,8 +42,9 @@ export function SimpleData (this: any, chat: any) {
 
     data.name.user = data.user.profile ? data.user.profile.name.notify : undefined
     
-    const text = (chat.message['conversation'] ? chat.message['conversation'] : ( imgorvid(chat.message.type) ? chat.message[chat.message.type].caption : (chat.message['extendedTextMessage']) ? chat.message['extendedTextMessage'].text : "" ))
-
+    const text = data.chat.message['conversation'] ||
+                 data.chat.message[data.chat.message.type]?.caption || 
+                 data.chat.message['extendedTextMessage']?.text
     data.text = {
         full: text,
         args: [],
