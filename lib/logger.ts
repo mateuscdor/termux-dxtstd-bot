@@ -10,7 +10,7 @@ const coloringBGText = function (text: string, color: string) {
     return !color ? chalk.bgKeyword('white')(text) : chalk.bgKeyword(color)(text)
 }
 
-const colors = ['red', 'white', 'black', 'blue', 'yellow', 'green', 'aqua', 'cyan']
+//const colors = ['red', 'white', 'black', 'blue', 'yellow', 'green', 'aqua', 'cyan']
 
 //LOGGER
 const pinoLevel = function (logLevel: any) {
@@ -41,13 +41,13 @@ const pinoLevel = function (logLevel: any) {
 
 
 const customPino = {
-    time: (timestamp: any) => moment.tz("Asia/Makassar").format('HH:mm:ss'),
+    time: () => moment.tz("Asia/Makassar").format('HH:mm:ss'),
     level: (levelLog: any) => pinoLevel(levelLog) 
 }
 
 const msgFormatPino = function (logPino: any) {
     //console.log(logPino)
-    let msg = logPino.msg
+    const msg = logPino.msg
     return msg
 }
 

@@ -40,7 +40,7 @@ export function SimpleData (this: any, chat: any) {
 
     data.group = data.on.group ? (db.groups[data.from] || {} ) : {}
 
-    data.name.user = data.user.profile.name.notify
+    data.name.user = data.user.profile ? data.user.profile.name.notify : undefined
     
     const text = (chat.message['conversation'] ? chat.message['conversation'] : ( imgorvid(chat.message.type) ? chat.message[chat.message.type].caption : (chat.message['extendedTextMessage']) ? chat.message['extendedTextMessage'].text : "" ))
 

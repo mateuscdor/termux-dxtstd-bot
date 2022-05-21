@@ -1,8 +1,9 @@
 import makeWASocket, { useSingleFileAuthState, BufferJSON, DEFAULT_CONNECTION_CONFIG } from "@adiwajshing/baileys"
 import * as fs from "fs"
+import * as path from "path"
 import { logger } from "../../lib/logger"
 
-const pathAuth = '/sdcard/bot/dxtstd-bot/auth.json'
+const pathAuth = path.join(__dirname, '..', '..', 'database', 'auth.json')
 
 const loadAuth = function (file: string) {
     const { state } = useSingleFileAuthState(file)
