@@ -1,0 +1,1 @@
+wget curl git nodejs ffmpeg sox
