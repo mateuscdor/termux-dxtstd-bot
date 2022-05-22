@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { logger } from '../../lib/logger';
+import { logger } from "../lib/logger";
 
 const deepReadDir = function deepReadDir(dir) {
     let results = [] as any;
@@ -24,7 +24,7 @@ const deepReadDir = function deepReadDir(dir) {
 };
 
 const commands = {} as any;
-const file = deepReadDir(path.resolve(__dirname, '../cmd'));
+const file = deepReadDir(path.resolve(__dirname, '../cmd/')).slice(1);
 
 const TypeCommand = file.map(filename => {
     const folder = filename.split('/').reverse().slice(1)[0]
@@ -41,6 +41,7 @@ file.forEach(filename => {
     const FilenameSplit = FilenameNoExt.split('/').reverse()
     
     const command = require(filename)
+    if (!command.default) return;
     commands[FilenameSplit[1]][FilenameSplit[0]] = command
 })
 

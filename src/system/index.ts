@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { logger } from "../../lib/logger"
+import { logger } from "../lib/logger"
 import { startClient, pathAuth, saveAuth } from "./client"
 import { ReceiverMessageHandler } from "./handler/message/receive"
 import { ContactsHandler } from "./handler/contact"

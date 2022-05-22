@@ -2,7 +2,7 @@
 import * as fs from "fs"
 import * as path from "path"
 
-const config = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../config.json')) as string)
+const config = JSON.parse(String(fs.readFileSync(path.resolve(__dirname, '../../../config.json'))))
 
 export function SimpleData (this: any, chat: any) {
     const data = {} as any

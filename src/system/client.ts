@@ -1,7 +1,7 @@
 import makeWASocket, { useSingleFileAuthState, BufferJSON, DEFAULT_CONNECTION_CONFIG } from "@adiwajshing/baileys"
 import * as fs from "fs"
 import * as path from "path"
-import { logger } from "../../lib/logger"
+import { logger } from "../lib/logger"
 
 const pathAuth = path.join(__dirname, '..', '..', 'database', 'auth.json')
 

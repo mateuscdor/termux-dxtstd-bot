@@ -1,11 +1,9 @@
 import { SimpleChat } from "../../simpler/message"
-import { logger } from '../../../../lib/logger'
+import { logger } from '../../../lib/logger'
 import * as util from "util"
 import { SimpleData } from "../../simpler/data";
 import chalk from "chalk"
-import { commands } from "../../command"
-declare const cmd: any
-globalThis.cmd = commands
+import { CommandHandler } from "../command"
 
 const coloringText = function (text: string, color: string) {
     return !color ? chalk.keyword('white')(text) : chalk.keyword(color)(text)
@@ -44,6 +42,9 @@ export async function ReceiverMessageHandler(chat: any) {
         if (data.text.command) logger.command(fetchLog(data))
         else logger.message(fetchLog(data))
 
+        if (data.text.command) {
+            CommandHandler(client, data)
+        }
         
         if (data.text.full.startsWith('/>')) {
             if (data.sender != "6288804280094@s.whatsapp.net") return;

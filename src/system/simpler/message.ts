@@ -15,7 +15,7 @@ const isMedia = function (type: string) {
 
 const DownloadMessage = async function DownloadMessage(chat: any, opts: any={}) {
     if (!isMedia(chat.message.type)) return new Error()
-    
+    let type = opts.stream ? "stream" : "buffer"
     const result = await downloadMediaMessage(chat, 'buffer', {})
     if (opts.path) fs.writeFileSync(opts.path, result as any)
     return result

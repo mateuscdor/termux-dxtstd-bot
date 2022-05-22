@@ -4,7 +4,7 @@ import moment from 'moment-timezone'
 import * as fs from "fs"
 import * as path from "path"
 
-const config = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../config.json')) as string)
+const config = JSON.parse(String(fs.readFileSync(path.resolve(__dirname, '../../config.json'))))
 
 const coloringText = function (text: string, color: string) {
     return !color ? chalk.keyword('white')(text) : chalk.keyword(color)(text)
