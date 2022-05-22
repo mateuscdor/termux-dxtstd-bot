@@ -20,7 +20,7 @@ export async function CommandHandler (this: any, client: any, data: any) {
         return
     }
     
-    if (command.permission.owner && !data.user.is.owner) {
+    if (command.permission.owner && (!(data.user.is.owner || data.user.is.coowner))) {
         let text = "You are not the owner!"
         client.sendMessage(data.from, { text: text }, { quoted: data.chat })
     }
