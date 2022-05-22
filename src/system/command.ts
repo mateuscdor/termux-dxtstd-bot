@@ -3,11 +3,11 @@ import * as path from 'path';
 import { logger } from '../../lib/logger';
 
 const deepReadDir = function deepReadDir(dir) {
-    var results = [];
+    let results = [] as any;
     const list = fs.readdirSync(dir);
-    var i = 0;
+    let i = 0;
     function next() {
-        var file = list[i++];
+        let file = list[i++];
         if (!file) return results;
             file = path.resolve(dir, file);
             const stat = fs.statSync(file);
@@ -24,18 +24,25 @@ const deepReadDir = function deepReadDir(dir) {
 };
 
 const commands = {} as any;
-const file = deepReadDir('../cmd/').filter((filename) => {
-    filename.endsWith('.ts');
-});
-for (const i in file) {
-    try { 
-        const command = require(path.join(__dirname, 'src', 'cmd', file[i]))
+const file = deepReadDir(path.resolve(__dirname, '../cmd'));
 
-        
-    } catch (error) {
-        logger.error(error,`Command [ ${file} ]`)
-    }
-}
+const TypeCommand = file.map(filename => {
+    const folder = filename.split('/').reverse().slice(1)[0]
+    if (folder.endsWith('.ts')) return 
+    return folder
+})
+console.log(TypeCommand)
+TypeCommand.forEach(type => {
+    commands[type] = {}
+})
+
+file.forEach(filename => {
+    const FilenameNoExt = filename.replace('.ts', '')
+    const FilenameSplit = FilenameNoExt.split('/').reverse()
+    
+    const command = require(filename)
+    commands[FilenameSplit[1]][FilenameSplit[0]] = command
+})
 
 export {
     commands
