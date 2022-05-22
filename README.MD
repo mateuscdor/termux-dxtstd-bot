@@ -46,8 +46,11 @@ npm start
 --->
 
 
-[![DentaCH](https://github.com/DentaCH.png?size=100)](https://github.com/DentaCH)
-----
-[DentaCH](https://github.com/DentaCH)
-Author / Creator
+<div align=center>
+    <a href="https://github.com/DentaCH">
+        <img src="https://github.com/DentaCH.png?size=100">DentaCH</img>
+    </a>
+    <p>Author / Creator</p>
+</div>
+
 </body>
