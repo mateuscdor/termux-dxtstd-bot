@@ -3,6 +3,9 @@ import { logger } from '../../../../lib/logger'
 import * as util from "util"
 import { SimpleData } from "../../simpler/data";
 import chalk from "chalk"
+import { commands } from "../../command"
+declare const cmd: any
+globalThis.cmd = commands
 
 const coloringText = function (text: string, color: string) {
     return !color ? chalk.keyword('white')(text) : chalk.keyword(color)(text)

@@ -1,11 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const imgorvid = function (type: string) {
-    const MEDIA = {
-        'videoMessage': true,
-        'imageMessage': true
-    } 
-    return MEDIA[type] ? true : false
-}
+import * as fs from "fs"
+import * as path from "path"
+
+const config = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../config.json')) as string)
 
 export function SimpleData (this: any, chat: any) {
     const data = {} as any
@@ -20,31 +17,29 @@ export function SimpleData (this: any, chat: any) {
         private: data.from.endsWith('@s.whatsapp.net')
     }
     data.sender = data.on.group ? chat.key.participant : chat.key.remoteJid
+    
+    const db = globalThis.db
+    
+    data.group = data.on.group ? (db.groups[data.from] || {} ) : {}
+
+    data.user = db.users[data.sender] || {}
+    data.user.is = {} as any
+    data.user.is.owner = data.sender.startsWith(config.owner.noPhone)
+    data.user.is.coowner = data.sender.startsWith(config.coowner.noPhone)
+    data.user.is.admin = {
+        super: false,
+        normal: false
+    }
     data.name = {
         user: "",
         group: ""
     } as any
     
-    const db = globalThis.db
-
-    data.user = db.users[data.sender] || {}
-    data.user.is = {} as any
-    data.user.is.owner = data.sender.startsWith('6288804280094')
-    data.user.is.admin = {
-        super: false,
-        normal: false
-    }
-    data.user.is.verified
-    data.user.is.premium
-    data.user.is.banned
-
-    data.group = data.on.group ? (db.groups[data.from] || {} ) : {}
-
-    data.name.user = data.user.profile ? data.user.profile.name.notify : undefined
+    data.name.user = data.user.profile?.name.notify || ""
     
     const text = data.chat.message['conversation'] ||
                  data.chat.message[data.chat.message.type]?.caption || 
-                 data.chat.message['extendedTextMessage']?.text
+                 data.chat.message['extendedTextMessage']?.text || ''
     data.text = {
         full: text,
         args: [],
@@ -53,6 +48,6 @@ export function SimpleData (this: any, chat: any) {
     } as any
     data.text.args = data.text.full.trim().split(/ +/).slice(1)
     data.text.body = data.text.args.join(' ')
-    data.text.command = (data.text.full.startsWith('%') ? data.text.full.slice(1).trim().split(/ +/).shift().toLowerCase() : undefined)
+    data.text.command = (data.text.full.startsWith(config.prefix) ? data.text.full.slice(1).trim().split(/ +/).shift().toLowerCase() : undefined)
     return data
 }

@@ -1,6 +1,10 @@
 import pino from "pino"
 import chalk from "chalk"
 import moment from 'moment-timezone'
+import * as fs from "fs"
+import * as path from "path"
+
+const config = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../config.json')) as string)
 
 const coloringText = function (text: string, color: string) {
     return !color ? chalk.keyword('white')(text) : chalk.keyword(color)(text)
@@ -41,7 +45,7 @@ const pinoLevel = function (logLevel: any) {
 
 
 const customPino = {
-    time: () => moment.tz("Asia/Makassar").format('HH:mm:ss'),
+    time: () => moment.tz(config.timezone).format('HH:mm:ss'),
     level: (levelLog: any) => pinoLevel(levelLog) 
 }
 

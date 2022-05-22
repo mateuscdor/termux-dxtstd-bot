@@ -10,6 +10,7 @@ declare const db: any
 //declare const client: any
 globalThis.db = database
 
+
 const start = async function () {
     try {
     const client = startClient()
