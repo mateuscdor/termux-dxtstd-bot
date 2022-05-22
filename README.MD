@@ -42,6 +42,12 @@ npm install
 npm start
 
 ```
+--------
 --->
 
+
+[![DentaCH](https://github.com/DentaCH.png?size=100)](https://github.com/DentaCH)
+----
+[DentaCH](https://github.com/DentaCH)
+Author / Creator
 </body>
