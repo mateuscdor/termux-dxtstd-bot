@@ -48,7 +48,8 @@ npm start
 
 <div align=center>
     <a href="https://github.com/DentaCH">
-        <img src="https://github.com/DentaCH.png?size=100">DentaCH</img>
+        <img src="https://github.com/DentaCH.png?size=100"></img>
+        <p>DentaCH</p>
     </a>
     <p>Author / Creator</p>
 </div>
