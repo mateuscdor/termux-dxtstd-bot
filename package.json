@@ -1,14 +1,20 @@
 {
   "name": "dxtstd-bot-ts",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.2.0",
+  "description": "Bot WhatsApp",
+  "deprecated": false,
   "main": "index.ts",
   "scripts": {
    "start": "nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./ --fix"
   },
-  "author": "",
+  "author": "DentaCH",
+  "homepage": "https://github.com/DentaCH/dxtstd-bot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DentaCH/dxtstd-bot.git"
+  },
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "^4.1.0",
