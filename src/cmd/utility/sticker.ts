@@ -1,5 +1,6 @@
 import * as util from "util"
 import * as sticker from "../../lib/sticker"
+import * as crypto from "crypto"
 
 const command = {} as any;
 command.default = async (client, data, logger) => {
@@ -15,7 +16,14 @@ command.default = async (client, data, logger) => {
         const media = await msg.download({ stream: true })
         
         const webp = await sticker.toWEBP(media)
-        client.sendMessage(data.from, { sticker: webp }, { quoted: data.chat })
+        
+        const json = {} as any
+        json['sticker-pack-id'] = crypto.randomBytes(32).toString('hex')
+        json['sticker-pack-name'] = (data.text.body ? data.text.body : data.name.user )
+        json['sticker-pack-publisher'] = (data.text.body ? (data.name.user + " | " + "dxtstd-bot") : ("dxtstd-bot"))
+        
+        const result = await sticker.addExif(webp, json)
+        client.sendMessage(data.from, { sticker: result }, { quoted: data.chat })
     } catch (e) {
         logger.error(e)
         client.sendMessage(data.from, {

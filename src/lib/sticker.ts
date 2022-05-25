@@ -1,6 +1,7 @@
 import * as cp from "child_process"
 import * as fs from "fs"
 import * as path from "path"
+import * as webp from "node-webpmux"
 
 export async function toWEBP(input: any) {
     return new Promise(async function (resolve, reject) {
@@ -36,9 +37,18 @@ export async function toWEBP(input: any) {
             
             resolve(result)
         })
+        
+        
     })
 }
 
-export function addExif(json: any) {
-    
+export async function addExif(webpBuffer, exifJSON: any) {
+    const img = new webp.Image();
+    let exifAttr = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]);
+    let jsonBuffer = Buffer.from(JSON.stringify(exifJson), 'utf8');
+    let exif = Buffer.concat([exifAttr, jsonBuffer]);
+    exif.writeUIntLE(jsonBuffer.length, 14, 4);
+    await img.load(webpBuffer);
+    img.exif = exif;
+    return await img.save(null);
 }
