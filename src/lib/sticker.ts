@@ -38,14 +38,13 @@ export async function toWEBP(input: any) {
             resolve(result)
         })
         
-        
     })
 }
 
 export async function addExif(webpBuffer, exifJSON: any) {
     const img = new webp.Image();
     let exifAttr = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]);
-    let jsonBuffer = Buffer.from(JSON.stringify(exifJson), 'utf8');
+    let jsonBuffer = Buffer.from(JSON.stringify(exifJSON), 'utf8');
     let exif = Buffer.concat([exifAttr, jsonBuffer]);
     exif.writeUIntLE(jsonBuffer.length, 14, 4);
     await img.load(webpBuffer);
