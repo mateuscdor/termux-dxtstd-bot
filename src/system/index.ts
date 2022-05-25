@@ -22,7 +22,7 @@ const start = async function () {
         saveAuth(client.authState, pathAuth)
     })
 
-    client.ev.on('messages.upsert', (chat) => { ReceiverMessageHandler(chat); db.store.save() })
+    client.ev.on('messages.upsert', ReceiverMessageHandler)
     client.ev.on('contacts.update', ContactsHandler)
 
     client.ev.on('connection.update', (update) => { 

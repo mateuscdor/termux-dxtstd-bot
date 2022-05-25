@@ -39,8 +39,8 @@ command.need = {
 };
 //INFO
 command.name = ""
-command.help = ['eval'].filter(v => v + " ");
-command.use = /^ev$/i as RegExp;
+command.help = ['eval'].map(v => v + " ");
+command.use = /^ev$/i;
 
 //OPTION
 command.disable = false;

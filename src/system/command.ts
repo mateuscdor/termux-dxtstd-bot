@@ -42,6 +42,7 @@ file.forEach(filename => {
     
     const command = require(filename)
     if (!command.default) return;
+    if (FilenameSplit[1] == "cmd") commands[FilenameSplit[0]] = command
     commands[FilenameSplit[1]][FilenameSplit[0]] = command
 })
 
