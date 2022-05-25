@@ -45,17 +45,8 @@ npm start
 --------
 --->
 
-## To Do
-- [ ] Handler
-- [ ] Permission
-- [ ] Database
-- [ ] Command
-- [ ] Finishing
-
---------
-[![DentaCH](https://github.com/DentaCH.png?size=100)](https://github.com/DentaCH) | [![Fau-Zan](https://github.com/Fau-Zan.png?size=100)](https://github.com/Fau-Zan)
-----|----
-[DentaCH](https://github.com/DentaCH) | [Fauzan](https://github.com/Fau-Zan)
+[![DentaCH](https://github.com/DentaCH.png?size=100)](https://github.com/DentaCH) | [![Fau-Zan](https://github.com/Fau-Zan.png?size=100)](https://github.com/Fau-Zan) | [![Rizky](https://github.com/Rizxyu.png?size=100)](https://github.com/Rizxyu)
+----|----|----
+[DentaCH](https://github.com/DentaCH) | [Fauzan](https://github.com/Fau-Zan) | [Rizky](https://github.com/Rizxyu)
 Author/Creator | Contributor
-
 </body>
