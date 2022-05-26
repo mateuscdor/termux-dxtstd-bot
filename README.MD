@@ -6,12 +6,15 @@
 <body>
 
 Bot WhatsApp TypeScript  
-Thx for <a href="https://github.com/adiwajshing">@adiwajshing</a> for the <a href="https://github.com/adiwajshing/baileys">baileys module</a>
+Thx for [@adiwajshing](https://github.com/adiwajshing) for [baileys module](https://github.com/adiwajshing/baileys)
+
+--------
 
 ## Ubuntu/Termux
 if using termux, maybe multiple plugins it's disabled
 
 ### Install
+
 ```bash
 apt update -y && apt upgrade -y
 apt install $(cat requirement.txt)
