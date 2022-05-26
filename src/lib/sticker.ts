@@ -3,6 +3,10 @@ import * as fs from "fs"
 import * as path from "path"
 import * as webp from "node-webpmux"
 
+const RandomFiles = function () {
+    return Math.floor(Math.random() * 100000)
+}
+
 export async function toWEBP(input: any) {
     return new Promise(async function (resolve, reject) {
         let input2
@@ -11,7 +15,7 @@ export async function toWEBP(input: any) {
             else if (typeof input == "string") type = "path";
         else reject();
         
-        const filename = ((path.resolve(__dirname, '..', '..', 'tmp') + '/') + new Date() + ".webp").replace(/ +/g, '_')
+        const filename = ((path.resolve(__dirname, '..', '..', 'tmp') + '/') + RandomFiles() + ".webp").replace(/ +/g, '_')
         let args;
         let opts;
         switch (type) {

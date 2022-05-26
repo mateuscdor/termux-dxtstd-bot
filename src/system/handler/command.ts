@@ -10,9 +10,6 @@ export async function CommandHandler (this: any, client: any, data: any) {
             }
         }
         Object.keys(commands[type]).forEach(cmd => {
-            console.log(type, cmd)
-            console.log(commands[type][cmd])
-            console.log(commands[type][cmd].use.test(data.text.command))
             if (commands[type][cmd].use.test(data.text.command)) {
                 command = commands[type][cmd]
             }
