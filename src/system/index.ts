@@ -13,23 +13,23 @@ globalThis.db = database
 
 const start = async function () {
     try {
-    const client = startClient()
-    globalThis.client = client
+        const client = startClient()
+        globalThis.client = client
 
-    db.store.bind(client.ev)
+        db.store.bind(client.ev)
 
-    client.ev.on('creds.update', () => {
-        saveAuth(client.authState, pathAuth)
-    })
+        client.ev.on('creds.update', () => {
+            saveAuth(client.authState, pathAuth)
+        })
+        
+        client.ev.on('messages.upsert', ReceiverMessageHandler)
+        client.ev.on('contacts.update', ContactsHandler)
 
-    client.ev.on('messages.upsert', ReceiverMessageHandler)
-    client.ev.on('contacts.update', ContactsHandler)
-
-    client.ev.on('connection.update', (update) => { 
-        console.log(update)
-        if (update.connection == 'close') {
-            const statusCode = (update.lastDisconnect?.error as Boom)?.output?.statusCode
-            if (statusCode != 401) {
+        client.ev.on('connection.update', (update) => { 
+            console.log(update)
+            if (update.connection == 'close') {
+                const statusCode = (update.lastDisconnect?.error as Boom)?.output?.statusCode
+                if (statusCode != 401) {
                     start()
                 }
             }

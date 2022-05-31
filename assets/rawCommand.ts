@@ -1,6 +1,9 @@
-const command = async (data) => {
-    try {
+import * as util from "util"
 
+const command = {} as any;
+command['default'] = async (client, data, logger) => {
+    try {
+        
     } catch (e) {
         logger.error(e)
         client.sendMessage(data.from, {
@@ -9,10 +12,10 @@ const command = async (data) => {
             quoted: data.chat
         })
     }
-};
+}
 //PERMISSION
-command.permission = {
-    owner: false,
+command['permission'] = {
+    owner: true,
     admin: {
         bot: false,
         normal: false,
@@ -23,7 +26,7 @@ command.permission = {
     private: false
 };
 //NEED
-command.need = {
+command['need'] = {
     register: false,
     limit: {
         amount: 0
@@ -34,15 +37,14 @@ command.need = {
     level: 0
 };
 //INFO
-command.name = '';
-command.help = [''];
-command.tags = [''];
-command.use = (/^$/i);
+command['name'] = ""
+command['help'] = [].map(v => v + " ");
+command['use'] = /^$/i;
 
 //OPTION
-command.disable = false;
-command.beta = false;
-command.support = {
+command['disable'] = false;
+command['beta'] = false;
+command['support'] = {
     android: true,
     linux: true,
     windows: true

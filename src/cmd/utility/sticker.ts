@@ -8,11 +8,26 @@ command.default = async (client, data, logger) => {
         let msg 
         data.chat.is.quoted ? (msg = data.chat.message.quoted()) : (msg = data.chat)
         
+        
         let isMedia: boolean = false
         if (/image/.test(msg.message.type)) isMedia = true ;
         else if (/video/.test(msg.message.type)) isMedia = true;
+        else if (/document/.test(msg.message.type)) {
+            const document = msg.message[msg.message.type]
+            if (document.mimetype.startsWith('image')) {
+                if (document.fileLength > 5000000) {
+                    let text = 'The file must be under 5 mb!'
+                    return client.sendMessage(data.from, { text: text }, { quoted: data.chat })
+                } else isMedia = true
+            } else if (document.mimetype.startsWith('video')) {
+                if (document.fileLength > 1000000) {
+                    let text = 'The file must be under 1 mb!'
+                    return client.sendMessage(data.from, { text: text }, { quoted: data.chat })
+                } else isMedia = true
+            }
+        }
         
-        if (!isMedia) return
+        if (!isMedia) return client.sendMessage(data.from, { text: 'Media must be images/videos' }, { quoted: data.chat })
         const media = await msg.download({ stream: true })
         
         const webp = await sticker.toWEBP(media)

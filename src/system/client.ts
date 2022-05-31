@@ -11,8 +11,12 @@ const loadAuth = function (file: string) {
 }
 
 const saveAuth =  function (auth: object, file: string) {
-    file = file || "./auth.json"
-    fs.writeFileSync(file, JSON.stringify(auth, BufferJSON.replacer))
+    try {
+        file = file || "./auth.json"
+        fs.writeFileSync(file, JSON.stringify(auth, BufferJSON.replacer))
+    } catch (error) {
+        logger.error(error)
+    }
 }
 
 const startClient = function () {

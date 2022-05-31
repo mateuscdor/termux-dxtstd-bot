@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { downloadMediaMessage } from "@adiwajshing/baileys"
+import { downloadMediaMessage, proto } from "@adiwajshing/baileys"
 import * as fs from "fs"
 
 const isMedia = function (type: string) {
@@ -36,7 +36,7 @@ const is = function IsChat(this: any, chat: any) {
 }
 
 export function SimpleChat (this: any, chat: any, client: any) {
-    chat = chat.messages ? chat.messages[0] : {}
+    chat = new proto.WebMessageInfo((chat.messages ? chat.messages[0] : {}))
     const message = chat.message
     if (!message) return
     
@@ -82,8 +82,8 @@ export function SimpleChat (this: any, chat: any, client: any) {
             const RJ = this.key.remoteJid || opts.remoteJid
             return await client.relayMessage(RJ, this.message, { messageid: this.key.id })
         }
-
-        return CQ
+        
+        return (new proto.WebMessageInfo(CQ))
     }
 
     this.messages = [chat]

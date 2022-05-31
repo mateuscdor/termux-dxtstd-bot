@@ -1,9 +1,10 @@
 import { SimpleChat } from "../../simpler/message"
 import { logger } from '../../../lib/logger'
-import * as util from "util"
 import { SimpleData } from "../../simpler/data";
-import chalk from "chalk"
 import { CommandHandler } from "../command"
+
+import chalk from "chalk"
+import * as util from "util"
 
 const coloringText = function (text: string, color: string) {
     return !color ? chalk.keyword('white')(text) : chalk.keyword(color)(text)
