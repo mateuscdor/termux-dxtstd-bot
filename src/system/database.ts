@@ -1,6 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as fs from "fs"
 import * as path from "path"
+
+import { logger } from "../lib/logger";
+
 import { makeInMemoryStore } from "@adiwajshing/baileys"
 
 const path_database = path.join(__dirname, '..', '..', 'database/')
@@ -8,7 +10,7 @@ const path_database_user = path_database + "users.json";
 const path_database_group = path_database + "groups.json";
 const path_database_store = path_database + "store.json";
 
-((!fs.existsSync(path_database)) && fs.mkdirSync(path_database))
+((!fs.existsSync(path_database)) && fs.mkdirSync(path_database) && logger.info('Make Folder Database...'))
 
 const database = {} as any
       database.users = fs.existsSync(path_database_user) ? JSON.parse(String(fs.readFileSync(path_database_user))) : {} 

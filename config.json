@@ -19,5 +19,6 @@
     "website": "https://",
     "prefix": "%",
     "ReadOnly": false,
+    "QRImage": false,
     "DB_SERVER": "127.0.0.1"
 }

@@ -21,6 +21,7 @@ CFonts.say(`'${packageJSON.name}' By @${packageJSON.author.name || packageJSON.a
 
 let AutoRestart = false
 let IsRunning = false
+
 /**
  * Start a ts file
  * @param {String} file `path/to/file`
@@ -35,6 +36,7 @@ const start = function (file: string, opts: object={}) {
         const opts = v.replace(/--/g, '')
         switch (opts) {
             case 'auto-restart':
+                logger.info('Enable Auto Restart (main ts-node)')
                 AutoRestart = true;
                 break;
         }
@@ -48,15 +50,15 @@ const start = function (file: string, opts: object={}) {
     
     node.on('exit', (...exit) => {
         IsRunning = false
-        logger.warn('exit code: %s', exit[0])
-        logger.warn('exit signal: %s', exit[1])
-        logger.info('Restarting...')
+        if (exit[0]) logger.warn('exit code: %s', exit[0])
+        if (exit[1]) logger.warn('exit signal: %s', exit[1])
         if (IsRunning) return
-        if (AutoRestart) start(file)
+        if (AutoRestart) logger.info('Restarting...'), start(file)
+        
     })
     
     node.on('message', msg => {
-        
+        logger.info('Receive MSG (ts-node): %s', msg)
         switch (msg) {
             case 'shutdown':
                 node.kill();
@@ -66,6 +68,7 @@ const start = function (file: string, opts: object={}) {
                 node.kill();
                 IsRunning = false;
                 if (AutoRestart) return;
+                logger.info('Restarting...')
                 start(file);
                 break;
             case 'uptime':

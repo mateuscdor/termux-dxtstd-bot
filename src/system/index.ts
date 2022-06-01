@@ -25,8 +25,10 @@ const start = async function () {
         client.ev.on('messages.upsert', ReceiverMessageHandler)
         client.ev.on('contacts.update', ContactsHandler)
 
-        client.ev.on('connection.update', (update) => { 
-            console.log(update)
+        client.ev.on('connection.update', (update) => {
+            if (update.qr) logger.info('Scan this QR!')
+            if (update.connection == 'connecting') logger.info('Connecting to WhatsApp Web...')
+            
             if (update.connection == 'close') {
                 const statusCode = (update.lastDisconnect?.error as Boom)?.output?.statusCode
                 if (statusCode != 401) {
