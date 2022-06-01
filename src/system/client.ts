@@ -4,7 +4,7 @@ import * as path from "path";
 import { logger } from "../lib/logger";
 
 const path_database = path.join(__dirname, '..', '..', 'database/');
-const pathAuth = path_database + 'auth.json';
+const path_main_auth = path_database + 'auth.json';
 ((!fs.existsSync(path_database)) && fs.mkdirSync(path_database))
 
 const loadAuth = function (file: string) {
@@ -23,7 +23,7 @@ const saveAuth =  function (auth: object, file: string) {
 
 const startClient = function () {
     const opts = {
-        auth: loadAuth(pathAuth),
+        auth: loadAuth(path_main_auth),
         printQRInTerminal: true,
         version: DEFAULT_CONNECTION_CONFIG.version,
         logger: logger
@@ -35,5 +35,5 @@ export {
     startClient,
     saveAuth,
     loadAuth,
-    pathAuth
+    path_main_auth
 }

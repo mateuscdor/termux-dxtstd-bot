@@ -2,7 +2,9 @@ import * as util from "util"
 import * as sticker from "../../lib/sticker"
 import * as crypto from "crypto"
 
-const command = {} as any;
+import { CommandType } from "../../types"
+
+const command: CommandType = {} as CommandType
 command.default = async (client, data, logger) => {
     try {
         let msg 

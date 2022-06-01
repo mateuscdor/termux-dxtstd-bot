@@ -1,10 +1,12 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import { config } from '../config'
+import { DataType, Text } from "../../types"
 
-export function SimpleData (this: any, chat: any) {
-    const data = {} as any
-    data['data'] = data
+
+export function SimpleData (this: any, chat: any)  {
+    const data: DataType = {} as DataType
+    //data['data'] = data
     data['chat'] = chat
 
     data['type'] = chat.message.type 
@@ -21,7 +23,7 @@ export function SimpleData (this: any, chat: any) {
     data['group'] = data.on.group ? (db.groups[data.from] || {}) : {}
 
     data['user'] = db.users[data.sender] || {}
-    data['user']['is'] = {}
+    
     data['user']['is']['owner'] = data.sender.startsWith(config.owner.noPhone)
     data['user']['is']['coowner'] = data.sender.startsWith(config.coowner.noPhone)
     data['user']['is']['admin'] = {
@@ -38,14 +40,9 @@ export function SimpleData (this: any, chat: any) {
     const text = data.chat.message['conversation'] ||
                  data.chat.message[data.chat.message.type]?.caption || 
                  data.chat.message['extendedTextMessage']?.text || ''
-    data['text'] = {
-        full: text,
-        args: [],
-        body: "",
-        command: undefined 
-    } as any
-    data['text']['args'] = data.text.full.trim().split(/ +/).slice(1)
-    data['text']['body'] = data.text.args.join(' ')
-    data['text']['command'] = (data.text.full.startsWith(config.prefix) ? data.text.full.slice(1).trim().split(/ +/).shift().toLowerCase() : undefined)
+                 
+    data['text']['args'] = text.trim().split(/ +/).slice(1)
+    data['text']['body'] = text.trim().split(/ +/).slice(1).join(' ')
+    data['text']['command'] = (text.startsWith(config.prefix) ? text.slice(1).trim().split(/ +/).shift().toLowerCase() : undefined)
     return data
 }

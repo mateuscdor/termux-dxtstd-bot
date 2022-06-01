@@ -1,5 +1,5 @@
 import { logger } from "../lib/logger"
-import { startClient, pathAuth, saveAuth } from "./client"
+import { startClient, path_main_auth, saveAuth } from "./client"
 import { ReceiverMessageHandler } from "./handler/message/receive"
 import { ContactsHandler } from "./handler/contact"
 import { database } from "./database"
@@ -10,7 +10,6 @@ declare const db: any
 //declare const client: any
 globalThis.db = database
 
-
 const start = async function () {
     try {
         const client = startClient()
@@ -19,7 +18,7 @@ const start = async function () {
         db.store.bind(client.ev)
 
         client.ev.on('creds.update', () => {
-            saveAuth(client.authState, pathAuth)
+            saveAuth(client.authState, path_main_auth)
         })
         
         client.ev.on('messages.upsert', ReceiverMessageHandler)

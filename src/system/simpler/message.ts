@@ -44,7 +44,7 @@ export function SimpleChat (this: any, chat: any, client: any) {
         if (Object.keys(message)[1] == "messageContextInfo") {
             message.type = Object.keys(message)[2]
         } else message.type = Object.keys(message)[1]
-    } else message.type = Object.keys(message)[0]
+    } //else message.type = Object.keys(message)[0]
     
     chat.is = new (is as any)(chat)
     chat.download = async function(this: any, opts: any={}) {
@@ -71,7 +71,7 @@ export function SimpleChat (this: any, chat: any, client: any) {
         
         //Quoted Message
         CQ.message = CQO.quotedMessage
-        CQ.message.type = Object.keys(CQ.message)[0]
+        //CQ.message.type = Object.keys(CQ.message)[0]
         CQ.is = new (is as any)(CQ)
 
 

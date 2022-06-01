@@ -1,5 +1,6 @@
 import * as util from "util"
 import { commands } from "../system/command"
+import { CommandType } from "../types"
 
 const menu = {
     header: `
@@ -20,8 +21,7 @@ Owner bot: %nameOwner%
 %package%
 `.trimStart().trimEnd()
 }
-
-const command = {} as any;
+const command: CommandType = {} as CommandType
 command['default'] = async (client, data, logger) => {
     try {
         

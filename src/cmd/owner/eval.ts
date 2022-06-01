@@ -1,6 +1,7 @@
 import * as util from "util"
+import { CommandType } from "../../types"
 
-const command = {} as any;
+const command: CommandType = {} as CommandType
 command.default = async (client, data, logger) => {
     try {
         const evalRes = await eval(data.text.body)
