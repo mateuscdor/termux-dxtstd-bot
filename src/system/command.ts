@@ -24,14 +24,13 @@ const deepReadDir = function deepReadDir(dir) {
 };
 
 const commands = {} as any;
-const file = deepReadDir(path.resolve(__dirname, '../cmd/')).slice(1);
+const file = deepReadDir(path.resolve(__dirname, '../cmd/'));
 
 const TypeCommand = file.map(filename => {
     const folder = filename.split('/').reverse().slice(1)[0]
     if (folder.endsWith('.ts')) return 
     return folder
 })
-console.log(TypeCommand)
 TypeCommand.forEach(type => {
     commands[type] = {}
 })
@@ -42,8 +41,8 @@ file.forEach(filename => {
     
     const command = require(filename)
     if (!command.default) return;
-    if (FilenameSplit[1] == "cmd") commands[FilenameSplit[0]] = command
-    commands[FilenameSplit[1]][FilenameSplit[0]] = command
+    if (FilenameSplit[1] == "cmd") commands[FilenameSplit[0]] = command;
+        else commands[FilenameSplit[1]][FilenameSplit[0]] = command;
 })
 
 export {

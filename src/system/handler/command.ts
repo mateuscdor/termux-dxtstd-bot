@@ -8,12 +8,13 @@ export async function CommandHandler (this: any, client: any, data: any) {
             if (commands[type].use.test(data.text.command)) {
                 command = commands[type]
             }
+        } else {
+            Object.keys(commands[type]).forEach(cmd => {
+                if (commands[type][cmd].use.test(data.text.command)) {
+                    command = commands[type][cmd]
+                }
+            })
         }
-        Object.keys(commands[type]).forEach(cmd => {
-            if (commands[type][cmd].use.test(data.text.command)) {
-                command = commands[type][cmd]
-            }
-        })
     })
     
     if (!command) {

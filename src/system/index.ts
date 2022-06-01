@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { logger } from "../lib/logger"
 import { startClient, pathAuth, saveAuth } from "./client"
 import { ReceiverMessageHandler } from "./handler/message/receive"
 import { ContactsHandler } from "./handler/contact"
 import { database } from "./database"
+
 import { Boom } from '@hapi/boom'
 
 declare const db: any

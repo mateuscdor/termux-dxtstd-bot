@@ -15,7 +15,9 @@
         },
         "noPhone": "6285314830096"
     },
-    "prefix": "%",
     "timezone": "Asia/Makassar",
-    "website": "https://"
+    "website": "https://",
+    "prefix": "%",
+    "ReadOnly": false,
+    "DB_SERVER": "127.0.0.1"
 }

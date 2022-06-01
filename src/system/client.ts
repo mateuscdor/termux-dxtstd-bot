@@ -1,14 +1,16 @@
-import makeWASocket, { useSingleFileAuthState, BufferJSON, DEFAULT_CONNECTION_CONFIG } from "@adiwajshing/baileys"
-import * as fs from "fs"
-import * as path from "path"
-import { logger } from "../lib/logger"
+import makeWASocket, { useSingleFileAuthState, BufferJSON, DEFAULT_CONNECTION_CONFIG } from "@adiwajshing/baileys";
+import * as fs from "fs";
+import * as path from "path";
+import { logger } from "../lib/logger";
 
-const pathAuth = path.join(__dirname, '..', '..', 'database', 'auth.json')
+const path_database = path.join(__dirname, '..', '..', 'database/');
+const pathAuth = path_database + 'auth.json';
+((!fs.existsSync(path_database)) && fs.mkdirSync(path_database))
 
 const loadAuth = function (file: string) {
     const { state } = useSingleFileAuthState(file)
     return state
-}
+};
 
 const saveAuth =  function (auth: object, file: string) {
     try {

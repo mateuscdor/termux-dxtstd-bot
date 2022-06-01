@@ -37,7 +37,7 @@ export async function toWEBP(input: any) {
             
             ffmpeg.on('exit', async (...args) => {
                 if (args[0] != 0) {
-                    reject(new Error('\n    <FFMPEG>: ' + String(DataFFMpegStdErr)))
+                    reject(new Error('\n\tFFMPEG: ' + String(DataFFMpegStdErr)))
                 }
                 
                 try {

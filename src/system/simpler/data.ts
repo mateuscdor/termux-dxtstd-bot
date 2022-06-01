@@ -1,7 +1,6 @@
-import * as fs from "fs"
-import * as path from "path"
-
-const config = JSON.parse(String(fs.readFileSync(path.resolve(__dirname, '../../../config.json'))))
+import * as fs from 'fs'
+import * as path from 'path'
+import { config } from '../config'
 
 export function SimpleData (this: any, chat: any) {
     const data = {} as any
