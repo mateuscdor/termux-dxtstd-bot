@@ -1,4 +1,4 @@
-export declare interface IsChat {
+export declare interface IsChatType {
     baileys: boolean;
     forward: boolean;
     media: boolean;

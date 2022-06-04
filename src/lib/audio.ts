@@ -27,13 +27,13 @@ const processor = async function (input: any, opts: any) {
             
             const ffmpeg = spawn('ffmpeg', opts.ffmpeg.args.result())
             let DataFFMpegStdErr = Buffer.from([])
-            let ffmpegClose = false;
-            let ffmpegCodeExit = 0
+            let ffmpegClose: boolean;
+            let ffmpegCodeExit: number|null;
             
             const sox = spawn('sox', opts.sox.args.result())
             let DataSoxStdErr = Buffer.from([])
-            let soxClose = false;
-            let soxCodeExit = 0
+            let soxClose: any;
+            let soxCodeExit: number|null;
             
             
             /*
@@ -74,15 +74,15 @@ const processor = async function (input: any, opts: any) {
                 }
             }
             
-            ffmpeg.on('exit', (code) => {
+            ffmpeg.on('exit', (...exit) => {
                 ffmpegClose = true;
-                ffmpegCodeExit = code;
+                ffmpegCodeExit = exit[0];
                 exitHandler()
             })
             
-            sox.on('exit', (code) => {
+            sox.on('exit', (...exit) => {
                 soxClose = true;
-                soxCodeExit = code;
+                soxCodeExit = exit[0];
                 exitHandler()
             })
         })

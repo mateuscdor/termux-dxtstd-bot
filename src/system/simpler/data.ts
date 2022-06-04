@@ -1,13 +1,16 @@
 import * as fs from 'fs'
 import * as path from 'path'
+
 import { config } from '../config'
 import { DataType, Text } from "../../types"
 
-
-export function SimpleData (this: any, chat: any)  {
+export function SimpleData (this: any, chat: any, database)  {
+    database.load()
     const data: DataType = {} as DataType
     //data['data'] = data
-    data['chat'] = chat
+    data['chat'] = chat;
+    data['message'] = chat.message
+    data['quoted'] = chat.message.quoted()
 
     data['type'] = chat.message.type 
     data['from'] = chat.key.remoteJid
@@ -18,14 +21,14 @@ export function SimpleData (this: any, chat: any)  {
     }
     data['sender'] = data.on.group ? chat.key.participant : chat.key.remoteJid
     
-    const db = globalThis.db
-    
-    data['group'] = data.on.group ? (db.groups[data.from] || {}) : {}
+    data['group'] = data.on.group ? (database.groups[data.from] || {}) : {}
 
-    data['user'] = db.users[data.sender] || {}
+    data['user'] = database.users[data.sender] || {}
     
-    data['user']['is']['owner'] = data.sender.startsWith(config.owner.noPhone)
-    data['user']['is']['coowner'] = data.sender.startsWith(config.coowner.noPhone)
+    data['user']['is'] = {}
+    
+    data['user']['is']['owner'] = data.sender.startsWith(config.owner.NoPhone)
+    data['user']['is']['coowner'] = data.sender.startsWith(config.coowner.NoPhone)
     data['user']['is']['admin'] = {
         super: false,
         normal: false
@@ -40,7 +43,12 @@ export function SimpleData (this: any, chat: any)  {
     const text = data.chat.message['conversation'] ||
                  data.chat.message[data.chat.message.type]?.caption || 
                  data.chat.message['extendedTextMessage']?.text || ''
-                 
+    data['text'] = {
+        full: text,
+        body: "",
+        args: [],
+        command: undefined
+    }
     data['text']['args'] = text.trim().split(/ +/).slice(1)
     data['text']['body'] = text.trim().split(/ +/).slice(1).join(' ')
     data['text']['command'] = (text.startsWith(config.prefix) ? text.slice(1).trim().split(/ +/).shift().toLowerCase() : undefined)

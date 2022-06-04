@@ -36,7 +36,7 @@ command['default'] = async (client, data, logger) => {
 }
 //PERMISSION
 command['permission'] = {
-    owner: true,
+    owner: false,
     admin: {
         bot: false,
         normal: false,

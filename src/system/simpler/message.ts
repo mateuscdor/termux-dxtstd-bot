@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { downloadMediaMessage, proto } from "@adiwajshing/baileys"
 import * as fs from "fs"
+
+import { IsChatType, ChatType } from "../../types"
 
 const isMedia = function (type: string) {
     const MEDIA = {
@@ -25,7 +26,7 @@ const DownloadMessage = async function DownloadMessage(chat: any, opts: any={}) 
     return result
 }
 
-const is = function IsChat(this: any, chat: any) {
+const is = function IsChat(this: IsChatType, chat: any) {
     const messageType = Object.keys(chat.message)[0];
     const chatCtxInfo = chat.message[messageType].contextInfo || {};
               
@@ -44,7 +45,7 @@ export function SimpleChat (this: any, chat: any, client: any) {
         if (Object.keys(message)[1] == "messageContextInfo") {
             message.type = Object.keys(message)[2]
         } else message.type = Object.keys(message)[1]
-    } //else message.type = Object.keys(message)[0]
+    } else message.type = Object.keys(message)[0]
     
     chat.is = new (is as any)(chat)
     chat.download = async function(this: any, opts: any={}) {
@@ -71,7 +72,7 @@ export function SimpleChat (this: any, chat: any, client: any) {
         
         //Quoted Message
         CQ.message = CQO.quotedMessage
-        //CQ.message.type = Object.keys(CQ.message)[0]
+        CQ.message.type = Object.keys(CQ.message)[0]
         CQ.is = new (is as any)(CQ)
 
 

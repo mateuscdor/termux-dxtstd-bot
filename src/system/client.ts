@@ -1,39 +1,37 @@
-import makeWASocket, { useSingleFileAuthState, BufferJSON, DEFAULT_CONNECTION_CONFIG } from "@adiwajshing/baileys";
+import makeWASocket, { DEFAULT_CONNECTION_CONFIG } from "@adiwajshing/baileys";
 import * as fs from "fs";
 import * as path from "path";
 import { logger } from "../lib/logger";
+import { MakeDatabase } from "./database"
 
-const path_database = path.join(__dirname, '..', '..', 'database/');
-const path_main_auth = path_database + 'auth.json';
-((!fs.existsSync(path_database)) && fs.mkdirSync(path_database))
+import { ReceiverMessageHandler, ContactsHandler, ConnectionHandler } from "./handler"
 
-const loadAuth = function (file: string) {
-    const { state } = useSingleFileAuthState(file)
-    return state
-};
 
-const saveAuth =  function (auth: object, file: string) {
-    try {
-        file = file || "./auth.json"
-        fs.writeFileSync(file, JSON.stringify(auth, BufferJSON.replacer))
-    } catch (error) {
-        logger.error(error)
-    }
-}
-
-const startClient = function () {
-    const opts = {
-        auth: loadAuth(path_main_auth),
-        printQRInTerminal: true,
+const startClient = function (name, opts: any={}) {
+    const database = new MakeDatabase(name)
+    database.load(name)
+    const client = makeWASocket({
+        auth: database.auth,
+        printQRInTerminal: (opts.printQR ? true : false),
         version: DEFAULT_CONNECTION_CONFIG.version,
         logger: logger
-    } 
-    return makeWASocket(opts)
+    })
+    
+    if (opts.bind) bind(client, database)
+    return client
+}
+
+const bind = function (client, database) {
+    client.ev.on('creds.update', () => {
+        database.auth = client.authState
+        database.save()
+    })
+    
+    client.ev.on('messages.upsert', (...chat) => ReceiverMessageHandler(chat[0], client, database))
+    client.ev.on('contacts.update', (contact) => ContactsHandler(contact, database))
+    client.ev.on('connection.update', (update) =>  ConnectionHandler(startClient, update))
 }
 
 export { 
-    startClient,
-    saveAuth,
-    loadAuth,
-    path_main_auth
+    startClient
 }

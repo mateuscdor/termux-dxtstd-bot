@@ -41,6 +41,17 @@ args.forEach(v => {
             else if (isOpts(args[i + 1])) throw MakeError(errorTZ);
             logger.info('Set Timezone to "%s" (child ts-node)', args[i + 1])
             config.timezone = args[i + 1]
+            break;
+        case 'database':
+            const errorDB = 'missing args for "--database". require 1 args'
+            if (!args[i + 1]) throw MakeError(errorDB)
+            else if (isOpts(args[i + 1])) throw MakeError(errorDB);
+            logger.info('Set Database to "%s" (child ts-node)', args[i + 1])
+            config.database = args[i + 1]
+            break
+        default:
+            logger.error('Args "%s" unknown!!', opts)
+            process.exit()
             break
     } 
     i ++

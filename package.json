@@ -25,6 +25,7 @@
     "cfonts": "^2.10.1",
     "chalk": "^4.1.2",
     "eslint": "^8.15.0",
+    "futoin-hkdf": "^1.5.1",
     "gtts": "^0.2.1",
     "moment-timezone": "^0.5.34",
     "node-webpmux": "^3.1.1",

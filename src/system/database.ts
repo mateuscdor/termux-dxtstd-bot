@@ -1,42 +1,185 @@
 import * as fs from "fs"
 import * as path from "path"
 
-import { logger } from "../lib/logger";
+import { logger } from "../lib";
+import { DatabaseType } from '../types'
 
-import { makeInMemoryStore } from "@adiwajshing/baileys"
+import { AuthenticationState, useSingleFileAuthState, initAuthCreds, makeInMemoryStore, BufferJSON } from "@adiwajshing/baileys"
 
-const path_database = path.join(__dirname, '..', '..', 'database/')
-const path_database_user = path_database + "users.json";
-const path_database_group = path_database + "groups.json";
-const path_database_store = path_database + "store.json";
+const PathDatabase = path.join(__dirname, '..', '..', 'database/')
+!fs.existsSync(PathDatabase) && fs.mkdirSync(PathDatabase)
 
-((!fs.existsSync(path_database)) && fs.mkdirSync(path_database) && logger.info('Make Folder Database...'))
-
-const database = {} as any
-      database.users = fs.existsSync(path_database_user) ? JSON.parse(String(fs.readFileSync(path_database_user))) : {} 
-      database.groups = fs.existsSync(path_database_group) ? JSON.parse(String(fs.readFileSync(path_database_group))) : {}
-      database.save = function (this: any, type: string) {
-    switch (type) {
-        case 'user':
-        case 'users': 
-            fs.writeFileSync(path_database_user, JSON.stringify(this.users, null, '\t'))
-            break
-        case 'group':
-        case 'groups':
-            fs.writeFileSync(path_database_group, JSON.stringify(this.groups, null, '\t'))
-            break
-        default:
-            fs.writeFileSync(path_database_user, JSON.stringify(this.users, null, '\t'))
-            fs.writeFileSync(path_database_group, JSON.stringify(this.groups, null, '\t'))
+const MakePathDatabase = function (name: string='') {
+    name = name || 'main'
+    const DirDB = (path.resolve(__dirname, '..', '..', 'database', name) + '/')
+    const FileConfigJSON = DirDB + 'config.json'
+    const FileAuthJSON = DirDB + 'auth.json'
+    const FileUsersJSON = DirDB + 'users.json'
+    const FileGroupsJSON = DirDB + 'groups.json'
+    const FileStoreJSON = DirDB + 'store.json'
+    
+    return {
+        dir: DirDB,
+        file: {
+            config: FileConfigJSON,
+            auth: FileAuthJSON,
+            users: FileUsersJSON,
+            groups: FileGroupsJSON,
+            store: FileStoreJSON
+        }
     }
 }
 
-      database.store = makeInMemoryStore({})
-      fs.existsSync(path_database_store) ? database.store.readFromFile(path_database_store) : {} 
-      database.store.save = function (this: any) {
-    fs.writeFileSync(path_database_store, JSON.stringify(this.toJSON(), null, '\t'))
+const Stringify = function (value: object={}, replacer: any=null, space='\t') {
+    return JSON.stringify((value || {}), (replacer), (space))
 }
 
+const NotEmptyFile = function (file) {
+    const exist = fs.existsSync(file)
+    if (exist) {
+        const buffer = fs.readFileSync(file)
+        if ((buffer).length < 1) {
+            return false
+        } else if ((buffer).length > 0) {
+            return true
+        } else return false
+    } else return false
+}
+
+const NotEmptyJSON = function (value) {
+    return value == {}
+}
+
+const DatabaseJSON = function () {
+    return {
+        config: {
+            db: {
+                name: '',
+                dir: '',
+                file: {}
+            }
+        },
+        auth: {
+            creds: initAuthCreds(),
+            keys: {}
+        } as AuthenticationState,
+        users: {}, 
+        groups: {},
+        store: {},
+        exist: () => {},
+        make: () => {},
+        load: () => {},
+        save: () => {}
+    } as DatabaseType
+}
+
+const exist = function (this: any, name: string='') {
+    name = name || this.config.db.name || 'main'
+    
+    const PathDB = MakePathDatabase(name)
+    return fs.existsSync(PathDB.dir)
+}
+const make = function (this: any, name: string='') {
+    if (this.exist(name)) { 
+        logger.warn('This database has exists!');
+        this.load(name);
+        return
+    }
+    
+    name = name || this.config.db.name || 'main'
+    this.config.db.name = name
+    logger.info('Make database for "%s"...', name)
+
+    const PathDB = MakePathDatabase(name)
+    
+    this.config.db.dir = PathDB.dir;
+    this.config.db.file = PathDB.file;
+    
+    fs.mkdirSync(PathDB.dir)
+    Object.keys(PathDB.file).forEach((value) => {
+        fs.writeFileSync(PathDB.file[value], Stringify(this[value]))
+    })
+};
+
+const load = function (this: any, name: string='') {
+    name = name || this.config.db.name || 'main';
+    this.config.db.name = name
+
+    logger.debug('Load database "%s"...', name)
+
+    if (!this.exist(name)) {
+        logger.warn('This database doesn\'t exists!');
+        this.make(name);
+        return
+    }
+    
+    const PathDB = MakePathDatabase(name)
+    
+    this.config.db.dir = PathDB.dir;
+    this.config.db.file = PathDB.file;
+    
+    Object.keys(PathDB.file).forEach((value) => {
+        if (value == "auth") {
+            if (!NotEmptyFile(PathDB.file[value])) return
+            this[value] = (useSingleFileAuthState(PathDB.file[value])).state;
+            if (!this[value].creds) this[value].creds = initAuthCreds()
+        } else {
+            this[value] = NotEmptyFile(PathDB.file[value]) ? JSON.parse(String(fs.readFileSync(PathDB.file[value]))) : {}
+        }
+    })
+}
+const save = function (this: any, name: string='') {
+    name = name || this.config.db.name || 'main'
+    logger.debug('Save database "%s"...', name)
+    
+    const PathDB = MakePathDatabase(name);
+    
+    Object.keys(PathDB.file).forEach((value) => {
+        if (NotEmptyJSON(this[value])) {
+            if (value == "auth") {
+                fs.writeFileSync(PathDB.file[value], Stringify(this[value], BufferJSON.replacer))
+            } else {
+                fs.writeFileSync(PathDB.file[value], Stringify(this[value]))
+            }
+        }
+    })
+}
+
+const MakeDatabase = class MakeDatabase {
+    config = {
+        db: {
+            name: '',
+            dir: '',
+            file: {}
+        }
+    }
+    auth = {
+        creds: initAuthCreds(),
+        keys: {}
+    } as AuthenticationState
+    users = {} 
+    groups = {}
+    store = {}
+    
+    exist = (name: string='') => {};
+    make = (name: string='') => {};
+    load = (name: string='') => {};
+    save = (name: string='') => {};
+    
+    constructor(name: string='') {
+        this.config.db.name = name || 'others'
+        this.store = makeInMemoryStore({})
+        this.exist = exist
+        this.make = make
+        this.load = load
+        this.save = save
+    }
+}
+
+
+const database = new MakeDatabase('main')
+
 export {
+    MakeDatabase,
     database
 }

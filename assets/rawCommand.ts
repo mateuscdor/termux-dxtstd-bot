@@ -1,6 +1,6 @@
 import * as util from "util"
 
-const command = {} as any;
+const command: CommandType = {} as CommandType;
 command['default'] = async (client, data, logger) => {
     try {
         

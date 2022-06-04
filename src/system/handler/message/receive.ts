@@ -1,9 +1,7 @@
-import { SimpleChat } from '../../simpler/message';
-import { logger } from '../../../lib/logger';
-import { SimpleData } from '../../simpler/data';
+import { SimpleChat, SimpleData } from '../../simpler';
 import { CommandHandler } from '../command';
 import { config } from '../../config'
-
+import { logger } from '../../../lib';
 
 import chalk from 'chalk';
 import * as util from 'util';
@@ -16,8 +14,7 @@ const coloringBGText = function (text: string, color: string) {
     return !color ? chalk.bgKeyword('white')(text) : chalk.bgKeyword(color)(text)
 };
 
-export async function ReceiverMessageHandler(chat: any) {
-    const client = globalThis.client;
+export async function ReceiverMessageHandler(chat: any, client: any, database: any) {
     try {
         if (!chat) return;
         if (chat.type === 'append') return;
@@ -27,7 +24,7 @@ export async function ReceiverMessageHandler(chat: any) {
         if (chat.key && chat.key.remoteJid == 'status@broadcast') return;
         if (chat.key.fromMe) return;
         
-        const data = SimpleData(chat);
+        const data = SimpleData(chat, database);
         const fetchLog = function (object: any) {
             let text = coloringText('"' + object.text.full + '"', 'white');
             text += coloringText(' From: ', 'yellow');

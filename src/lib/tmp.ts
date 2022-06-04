@@ -19,7 +19,7 @@ const MakeTMPFile = function (ext: string='', dir: string='', media: any=undefin
     }
     
     if (ext) {
-        if (filename.startsWith('.')) {
+        if (ext.startsWith('.')) {
             filename += ext
         } else {
             filename += '.' + ext

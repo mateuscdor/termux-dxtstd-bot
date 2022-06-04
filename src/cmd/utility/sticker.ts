@@ -1,5 +1,5 @@
 import * as util from "util"
-import * as sticker from "../../lib/sticker"
+import { sticker } from "../../lib"
 import * as crypto from "crypto"
 
 import { CommandType } from "../../types"
@@ -50,6 +50,7 @@ command.default = async (client, data, logger) => {
         })
     }
 }
+
 //PERMISSION
 command.permission = {
     owner: false,

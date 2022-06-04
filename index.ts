@@ -1,4 +1,3 @@
-"use strict"
 import { spawn } from "child_process"
 import * as path from "path"
 import * as CFonts from "cfonts"
@@ -38,6 +37,7 @@ const start = function (file: string, opts: object={}) {
             case 'auto-restart':
                 logger.info('Enable Auto Restart (main ts-node)')
                 AutoRestart = true;
+                args.splice(i, 1)
                 break;
         }
     })
