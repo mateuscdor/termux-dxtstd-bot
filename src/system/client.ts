@@ -17,11 +17,16 @@ const startClient = function (name, opts: any={}) {
         logger: logger
     })
     
-    if (opts.bind) bind(client, database)
+    if (opts.bind) bind(client, database, name, opts)
     return client
 }
 
-const bind = function (client, database) {
+
+const bind = function (client, database, name, opts) {
+    const restartClient = function () {
+        return startClient(name, opts)
+    }
+    
     client.ev.on('creds.update', () => {
         database.auth = client.authState
         database.save()
@@ -29,7 +34,7 @@ const bind = function (client, database) {
     
     client.ev.on('messages.upsert', (...chat) => ReceiverMessageHandler(chat[0], client, database))
     client.ev.on('contacts.update', (contact) => ContactsHandler(contact, database))
-    client.ev.on('connection.update', (update) =>  ConnectionHandler(startClient, update))
+    client.ev.on('connection.update', (update) =>  ConnectionHandler(restartClient, update))
 }
 
 export { 

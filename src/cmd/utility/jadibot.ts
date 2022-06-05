@@ -12,20 +12,22 @@ const command: CommandType = {} as CommandType
 
 command['default'] = async (client, data, logger) => {
     try {
-        const opts = {
-            db: data.sender,
-            printQR: false,
-            autorestart: true
-        }
-        let client_0 = bot.StartBot(data.sender, opts)
-        const database = new MakeDatabase(data.sender)
-        const config = {}
-        function bind(client_0) {
+        const result = await new Promise (async (resolve, reject) => {
+            const opts = {
+                db: data.sender,
+                printQR: false,
+                autorestart: true
+            }
+            let client_0 = bot.StartBot(data.sender, opts)
+            const database = new MakeDatabase(data.sender)
+            const config = {}
+            
             let message;
-        
-            let CountQR = 0
-            client_0.ev.on('connection.update', async (update) => {
-                if (CountQR > 5) client_0.logout()
+            let logout
+
+            const CONUP =  async (update) => {
+                let CountQR = 0
+                if (CountQR > 4) return client_0.logout()
                 if (update.qr) {
                     CountQR ++
                     if (message) {
@@ -35,19 +37,28 @@ command['default'] = async (client, data, logger) => {
                     message = await client.sendMessage(data.from, { image: QR, caption: "Scan This QR!" }, { quoted: data.chat })
                 }
                 if (update.connection == 'close') {
-                const statusCode = (update.lastDisconnect?.error as Boom)?.output?.statusCode
-                    if (statusCode != 401) {
+                    const status = (update.lastDisconnect?.error as Boom)?.output
+                    const statusCode = status?.statusCode
+                    if (statusCode == 401) {
+                        logout = true 
+                        client.sendMessage(data.from, { text: "Timeout" }, { quoted: data.chat })
+                        reject(update)
+                    } else if (statusCode == 408) {
+                        if ((status?.payload?.message).startsWith('QR')) {
+                            logout = true 
+                            client.sendMessage(data.from, { text: "Timeout" }, { quoted: data.chat })
+                        }
+                        reject(update)
+                    } else if (statusCode != 401) {
                         client_0 = bot.StartBot(data.sender, opts)
                         bind(client_0)
                         client.sendMessage(data.from, { text: "Restarting client..." }, { quoted: data.chat })
-                    } else if (statusCode == 401) {
-                        client.sendMessage(data.from, { text: "Timeout" }, { quoted: data.chat })
                     }
                 }
-            })
-        
+            }
+            
             let trigger = false
-            client_0.ev.on('creds.update', () => {
+            const CONCREDS = () => {
                 database.auth = client_0.authState
                 database.save()
                 client.sendMessage(data.from, { text: "Save Auth..." })
@@ -59,15 +70,22 @@ command['default'] = async (client, data, logger) => {
                     setTimeout(() => {
                         client_0.end()
                         bot.SpawnBot(opts)
+                        resolve('success')
                     }, 20*1000)
                 }
-            })
-        }
-        bind(client_0)
-    } catch (e) {
-        logger.error(e)
+            }
+            
+            function bind(client_0) {
+                if (logout) return client_0.logout(), reject('logout')
+                client_0.ev.on('connection.update', CONUP)
+                client_0.ev.on('creds.update', CONCREDS)
+            }
+            bind(client_0)
+        })
+    } catch (error) {
+        logger.error(error)
         client.sendMessage(data.from, {
-            text: util.format(e)
+            text: util.format(error)
         }, {
             quoted: data.chat
         })

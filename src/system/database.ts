@@ -50,29 +50,6 @@ const NotEmptyJSON = function (value) {
     return value == {}
 }
 
-const DatabaseJSON = function () {
-    return {
-        config: {
-            db: {
-                name: '',
-                dir: '',
-                file: {}
-            }
-        },
-        auth: {
-            creds: initAuthCreds(),
-            keys: {}
-        } as AuthenticationState,
-        users: {}, 
-        groups: {},
-        store: {},
-        exist: () => {},
-        make: () => {},
-        load: () => {},
-        save: () => {}
-    } as DatabaseType
-}
-
 const exist = function (this: any, name: string='') {
     name = name || this.config.db.name || 'main'
     
