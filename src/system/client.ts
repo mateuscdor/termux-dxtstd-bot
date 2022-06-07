@@ -32,8 +32,12 @@ const bind = function (client, database, name, opts) {
         database.save()
     })
     
-    client.ev.on('messages.upsert', (...chat) => ReceiverMessageHandler(chat[0], client, database))
+    client.ev.on('messages.upsert', (...chat) => {
+        ReceiverMessageHandler(chat[0], client, database)
+    })
+    
     client.ev.on('contacts.update', (contact) => ContactsHandler(contact, database))
+    
     client.ev.on('connection.update', (update) =>  ConnectionHandler(restartClient, update))
 }
 

@@ -27,6 +27,7 @@
     "eslint": "^8.15.0",
     "futoin-hkdf": "^1.5.1",
     "gtts": "^0.2.1",
+    "jimp": "^0.16.1",
     "moment-timezone": "^0.5.34",
     "node-webpmux": "^3.1.1",
     "pino": "^7.11.0",

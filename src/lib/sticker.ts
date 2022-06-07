@@ -12,7 +12,7 @@ export async function toWEBP(input: any) {
             let type
             if (input._readableState) type = "stream";
                 else if (typeof input == "string") type = "path";
-            else reject();
+            else return reject();
             
             const filename = MakeTMPFile('webp')
             let args;

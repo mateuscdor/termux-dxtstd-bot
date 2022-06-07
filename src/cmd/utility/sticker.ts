@@ -7,9 +7,9 @@ import { CommandType } from "../../types"
 const command: CommandType = {} as CommandType
 command.default = async (client, data, logger) => {
     try {
-        let msg 
-        data.chat.is.quoted ? (msg = data.chat.message.quoted()) : (msg = data.chat)
-        
+        let msg;
+        if (data.chat.is.media) msg = data.chat;
+        !msg && data.chat.is.quoted ? (msg = data.chat.message.quoted()) : (msg = data.chat);
         
         let isMedia: boolean = false
         if (/image/.test(msg.message.type)) isMedia = true ;

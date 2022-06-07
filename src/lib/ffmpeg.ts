@@ -25,7 +25,7 @@ const processor = async function (input: any, opts: any) {
     else output = "file"
     try {
         const result = await new Promise(async (resolve, reject) => {
-            if (!input._readableState) reject(new Error('The input must be a stream!'));
+            if (!input._readableState) return reject(new Error('The input must be a stream!'));
             
             const ffmpeg = spawn('ffmpeg', opts.args.result())
             let DataFFMpegStdErr = Buffer.from([])
