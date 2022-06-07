@@ -47,7 +47,7 @@ const NotEmptyFile = function (file) {
 }
 
 const NotEmptyJSON = function (value) {
-    return value == {}
+    return (!(value == {}))
 }
 
 const exist = function (this: any, name: string='') {
