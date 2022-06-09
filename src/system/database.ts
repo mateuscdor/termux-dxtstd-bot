@@ -101,7 +101,7 @@ const load = function (this: any, name: string='') {
             this[value] = (useSingleFileAuthState(PathDB.file[value])).state;
             if (!this[value].creds) this[value].creds = initAuthCreds()
         } else {
-            this[value] = NotEmptyFile(PathDB.file[value]) ? JSON.parse(String(fs.readFileSync(PathDB.file[value]))) : {}
+            this[value] = NotEmptyFile(PathDB.file[value]) ? JSON.parse(String(fs.readFileSync(PathDB.file[value]))) : this[value]
         }
     })
 }

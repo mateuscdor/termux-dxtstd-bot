@@ -33,21 +33,30 @@ const NODEJS = {
 }
 
 if (PLATFORM == "android") {
-    let input = createInput()
+    new Promise(async (resolve, reject) => {
+        let input = createInput()
     
-    const SpawnAPT = function () {
-        input.question('Install package (APT)? [y/n]: ', () => {
-            const ArgsAPT = ("install " + PACKAGE_ANDROID + " -y").split(' ')
-            
-        })
-    }
-    
-    const NodeJS = function () {
-        input.question('Install NODEJS? [y/n]: ', () => {
-            const ArgsAPT = ("install " + "nodejs" + " -y").split(' ')
-        })
-    }
-    
+        const SpawnAPT = async function () {
+            await new Promise(async (resolve, reject) => {
+                input.question('Install package (APT)? [y/n]: ', async (answer) => {
+                    if (answer == "y") {
+                        const ArgsAPT = ("install " + PACKAGE_ANDROID + " -y")
+                        await execSync('apt ' + ArgsAPT)
+                        resolve('a')
+                    }
+                })
+            })
+            return
+        }
+        
+        const NodeJS = async function () {
+            input.question('Install NODEJS? [y/n]: ', () => {
+                const ArgsAPT = ("install " + "nodejs" + " -y").split(' ')
+            })
+        }
+        
+        await SpawnAPT()
+    })
 } else if (PLATFORM == "linux") {
     
     const CheckPackageManager = function () {
@@ -113,13 +122,13 @@ if (PLATFORM == "android") {
     const SpawnPM = async function () {
         const PACKAGE_MANAGER = CheckPackageManager();
         const SpawnPMUpdate = function () {
-            return spawn(PACKAGE_MANAGER.executeable, [PACKAGE_MANAGER.update], opts)
+            return spawn('sudo', [PACKAGE_MANAGER.executeable, PACKAGE_MANAGER.update], opts)
         }
         const SpawnPMUpgrade = function () {
-            return spawn(PACKAGE_MANAGER.executeable, [PACKAGE_MANAGER.upgrade], opts)
+            return spawn('sudo', [PACKAGE_MANAGER.executeable, PACKAGE_MANAGER.upgrade], opts)
         }
         const SpawnPMInstall = function () {
-            return spawn(PACKAGE_MANAGER.executeable, [PACKAGE_MANAGER.install].concat(PACKAGE['linux'].split(' ')), opts)
+            return spawn('sudo', [PACKAGE_MANAGER.executeable, PACKAGE_MANAGER.install].concat(PACKAGE['linux'].split(' ')), opts)
         }
         
         await new Promise((resolve) => {
@@ -184,10 +193,15 @@ if (PLATFORM == "android") {
         })
         input = createInput()
         const NPM = await new Promise((resolve, reject) => {
-            input.question('Install Package Bot (NPM)? [y/n]: ', (answer) => {
+            const opts = {
+                env: process.env,
+                stdio: 'inherit'
+            } as any
+
+            input.question('Install Package Bot (NPM)? [y/n]: ', async (answer) => {
                 input.close()
                 if (answer == 'y') {
-                    await execSync('npm install --no-bin-links --production')
+                    await execSync('npm install --no-bin-links --production', opts)
                 }
             })
         })
