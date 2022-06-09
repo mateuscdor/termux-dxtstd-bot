@@ -1,6 +1,6 @@
 <head>
     <a href="https://github.com/DentaCH/dxtstd-bot">
-        <img src="/../../../../DentaCH/assets-repo/blob/master/dxtstd-bot/banner.jpg"> </img>
+        <img src="/../../blob/asset/banner.jpg"> </img>
     </a>
 </head>
 <body>
@@ -16,13 +16,12 @@ if using termux, maybe multiple plugins it's disabled
 ### Install
 
 ```bash
-apt update -y && apt upgrade -y
-apt install $(cat requirement.txt)
+apt install nodejs
 npm install -g ts-node nodemon
 
 git clone https://github.com/DentaCH/dxtstd-bot
 cd dxtstd-bot
-npm install
+ts-node install
 ```
 
 ### Run

@@ -150,7 +150,7 @@ if (PLATFORM == "android") {
         
         input = createInput()
         const NodeJS = await new Promise((resolve, reject) => {
-            input.question('Install NodeJS? [y/n]: ', async (answer) => {
+            input.question('Install/Upgrade NodeJS? [y/n]: ', async (answer) => {
                 input.close()
                 if (answer == 'y') {
                     const opts = {
