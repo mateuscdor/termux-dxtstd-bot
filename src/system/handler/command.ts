@@ -1,7 +1,7 @@
 import { commands } from "../command"
 import { logger } from "../../lib/logger"
 
-export async function CommandHandler (this: any, client: any, data: any) {
+export async function CommandHandler (this: any, client, { data, database }) {
     let command
     Object.keys(commands).forEach(type => {
         if (typeof commands[type]?.default == "function") {
@@ -23,14 +23,14 @@ export async function CommandHandler (this: any, client: any, data: any) {
         return
     }
     
-    if (command.permission.owner && (!(data.user.is.owner || data.user.is.coowner))) {
+    if (command.permission.owner && !data.user.is.owner) {
         let text = "You are not the owner!"
         client.sendMessage(data.from, { text: text }, { quoted: data.chat })
         return
     }
     
     try {
-        command.default.call(this, client, data, logger)
+        command.default.call(this, client, { data, database }, logger)
     } catch (error) {
         logger.error(error)
     }

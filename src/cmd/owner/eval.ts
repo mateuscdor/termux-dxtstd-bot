@@ -1,8 +1,8 @@
-import * as util from "util"
-import { CommandType } from "../../types"
+import * as util from 'util'
+import { CommandType } from '../../types'
 
 const command: CommandType = {} as CommandType
-command.default = async (client, data, logger) => {
+command.default = async (client, { data, database }, logger) => {
     try {
         const evalRes = await eval(data.text.body)
         client.sendMessage(data.from, { text: util.format(evalRes) }, { quoted: data.chat })
@@ -39,8 +39,8 @@ command.need = {
     level: 0
 };
 //INFO
-command.name = ""
-command.help = ['eval'].map(v => v + " ");
+command.name = ''
+command.help = ['eval'].map(v => v + ' ');
 command.use = /^ev$/i;
 
 //OPTION

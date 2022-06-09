@@ -1,7 +1,7 @@
 import { DataType } from './data'
 
 export interface CommandType {
-    default: (client: any, data: DataType, logger: any) => void;
+    default: (client: any, { data: DataType, database }, logger: any) => void;
     permission: {
         owner: boolean;
         admin: {

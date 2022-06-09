@@ -28,7 +28,7 @@ export function SimpleData (this: any, chat: any, database)  {
     data['user']['is'] = {}
     
     data['user']['is']['owner'] = data.sender.startsWith(config.owner.NoPhone)
-    data['user']['is']['coowner'] = data.sender.startsWith(config.coowner.NoPhone)
+    //data['user']['is']['coowner'] = data.sender.startsWith(config.coowner.NoPhone)
     data['user']['is']['admin'] = {
         super: false,
         normal: false

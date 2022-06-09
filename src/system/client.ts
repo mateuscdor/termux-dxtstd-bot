@@ -4,12 +4,12 @@ import * as path from "path";
 import { logger } from "../lib/logger";
 import { MakeDatabase } from "./database"
 
-import { ReceiverMessageHandler, ContactsHandler, ConnectionHandler } from "./handler"
+import { EventsHandler } from "./handler"
 
-
-const startClient = function (name, opts: any={}) {
-    const database = new MakeDatabase(name)
-    database.load(name)
+const startClient = function (opts: any={}) {
+    const database = new MakeDatabase((opts.db || 'other'))
+    database.load((opts.db || 'other'))
+    
     const client = makeWASocket({
         auth: database.auth,
         printQRInTerminal: (opts.printQR ? true : false),
@@ -17,28 +17,8 @@ const startClient = function (name, opts: any={}) {
         logger: logger
     })
     
-    if (opts.bind) bind(client, database, name, opts)
+    if (opts.bind) EventsHandler(client, database, opts)
     return client
-}
-
-
-const bind = function (client, database, name, opts) {
-    const restartClient = function () {
-        return startClient(name, opts)
-    }
-    
-    client.ev.on('creds.update', () => {
-        database.auth = client.authState
-        database.save()
-    })
-    
-    client.ev.on('messages.upsert', (...chat) => {
-        ReceiverMessageHandler(chat[0], client, database)
-    })
-    
-    client.ev.on('contacts.update', (contact) => ContactsHandler(contact, database))
-    
-    client.ev.on('connection.update', (update) =>  ConnectionHandler(restartClient, update))
 }
 
 export { 

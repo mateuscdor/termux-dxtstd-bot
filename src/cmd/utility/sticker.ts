@@ -1,11 +1,11 @@
-import * as util from "util"
-import { sticker } from "../../lib"
-import * as crypto from "crypto"
+import * as util from 'util'
+import { sticker } from '../../lib'
+import * as crypto from 'crypto'
 
-import { CommandType } from "../../types"
+import { CommandType } from '../../types'
 
 const command: CommandType = {} as CommandType
-command.default = async (client, data, logger) => {
+command.default = async (client, { data, database }, logger) => {
     try {
         let msg;
         if (data.chat.is.media) msg = data.chat;
@@ -37,7 +37,7 @@ command.default = async (client, data, logger) => {
         const json = {} as any
         json['sticker-pack-id'] = crypto.randomBytes(32).toString('hex')
         json['sticker-pack-name'] = (data.text.body ? data.text.body : data.name.user )
-        json['sticker-pack-publisher'] = (data.text.body ? (data.name.user + " | " + "dxtstd-bot") : ("dxtstd-bot"))
+        json['sticker-pack-publisher'] = (data.text.body ? (data.name.user + ' | ' + 'dxtstd-bot') : ('dxtstd-bot'))
         
         const result = await sticker.addExif(webp, json)
         client.sendMessage(data.from, { sticker: result }, { quoted: data.chat })
@@ -75,8 +75,8 @@ command.need = {
     level: 0
 };
 //INFO
-command.name = "sticker"
-command.help = ['sticker'].map(v => v + " ");
+command.name = 'sticker'
+command.help = ['sticker'].map(v => v + ' ');
 command.use = /^sticker$/i;
 
 //OPTION

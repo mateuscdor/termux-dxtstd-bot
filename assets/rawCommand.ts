@@ -1,7 +1,7 @@
-import * as util from "util"
+import * as util from 'util'
 
 const command: CommandType = {} as CommandType;
-command['default'] = async (client, data, logger) => {
+command['default'] = async (client, { data, database }, logger) => {
     try {
         
     } catch (e) {
@@ -37,8 +37,8 @@ command['need'] = {
     level: 0
 };
 //INFO
-command['name'] = ""
-command['help'] = [].map(v => v + " ");
+command['name'] = ''
+command['help'] = [].map(v => v + ' ');
 command['use'] = /^$/i;
 
 //OPTION

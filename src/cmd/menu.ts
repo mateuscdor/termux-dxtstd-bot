@@ -1,30 +1,50 @@
-import * as util from "util"
-import { commands } from "../system/command"
-import { CommandType } from "../types"
+import * as util from 'util'
+import { commands } from '../system/command'
+import { CommandType } from '../types'
 
-const menu = {
-    header: `
+const MakeMenu = function () {
+    return {
+        header: `
 *DXTSTD Bot*
 Hi %user%!
 
 *[ %typeMenu% ]*
 `.trimStart(),
-    body: `%menu%
+        body: `%menu%
     
 *<>* = _requirement_, *()* = _optional_
 *|* = _or_, *&* = _and_
 *@* = _tag_, *R* = _reply_
 
 information for donation, type *%donate*`.trimStart(),
-    footer: `
+        footer: `
 Owner bot: %nameOwner%
-%package%
-`.trimStart().trimEnd()
+%package%`.trimStart()
+    } as any
 }
 const command: CommandType = {} as CommandType
-command['default'] = async (client, data, logger) => {
+command['default'] = async (client, { data, database }, logger) => {
     try {
+        const MENU = MakeMenu()
+        let MenuType: string = '';
         
+        if (!data.text.args) MenuType = 'main';
+        else if (data.text.args) MenuType = 'sub'
+        
+        MENU.header = MENU.header.replace('%user%', data.name.user)
+        MENU.header = MENU.header.replace('%typemenu', `${MenuType} menu`.toUpperCase())
+        
+        if (MenuType == 'main') {
+            let ContentsMenu: string = ''
+            Object.keys(commands).forEach(v => {
+                ContentsMenu += database.config.prefix + ''
+            })
+            
+        }
+        
+        if (MenuType == 'sub') {
+            
+        }
     } catch (e) {
         logger.error(e)
         client.sendMessage(data.from, {
@@ -58,8 +78,8 @@ command['need'] = {
     level: 0
 };
 //INFO
-command['name'] = "Menu"
-command['help'] = ['menu'].map(v => v + " ");
+command['name'] = 'Menu'
+command['help'] = ['menu'].map(v => v + ' ');
 command['use'] = /^menu$/i;
 
 //OPTION

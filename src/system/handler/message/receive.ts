@@ -43,7 +43,7 @@ export async function ReceiverMessageHandler(chat: any, client: any, database: a
         if (config.ReadOnly) return
 
         if (data.text.command) {
-            CommandHandler(client, data)
+            CommandHandler(client, { data, database })
         };
         
         //console.log(data)
