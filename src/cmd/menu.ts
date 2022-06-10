@@ -1,5 +1,5 @@
 import * as util from 'util'
-import { commands } from '../system/command'
+import { Commands } from '../system/command'
 import { CommandType } from '../types'
 
 const MakeMenu = function () {
@@ -8,7 +8,7 @@ const MakeMenu = function () {
 *DXTSTD Bot*
 Hi %user%!
 
-*[ %typeMenu% ]*
+*[ %TypeMenu% ]*
 `.trimStart(),
         body: `%menu%
     
@@ -22,29 +22,58 @@ Owner bot: %nameOwner%
 %package%`.trimStart()
     } as any
 }
-const command: CommandType = {} as CommandType
-command['default'] = async (client, { data, database }, logger) => {
+
+const command: CommandType = {} as CommandType;
+command.default = async (client, { data, database }, logger) => {
     try {
         const MENU = MakeMenu()
+        const commands = new Commands()
         let MenuType: string = '';
         
-        if (!data.text.args) MenuType = 'main';
-        else if (data.text.args) MenuType = 'sub'
+        if (data.text.args.length == 0) MenuType = 'main';
+        else if (data.text.args[0] == 'all') MenuType = 'all'
+        else if (data.text.args.length > 0) MenuType = 'sub'
+        
         
         MENU.header = MENU.header.replace('%user%', data.name.user)
-        MENU.header = MENU.header.replace('%typemenu', `${MenuType} menu`.toUpperCase())
+        MENU.header = MENU.header.replace('%TypeMenu%', `${MenuType} menu`.toUpperCase())
         
         if (MenuType == 'main') {
             let ContentsMenu: string = ''
-            Object.keys(commands).forEach(v => {
-                ContentsMenu += database.config.prefix + ''
+            Object.keys(commands.category).forEach(v => {
+                
+                ContentsMenu += "> " + (database.config.prefix || "%") + "menu " + v + '\n'
+            })
+            ContentsMenu = ContentsMenu.trimEnd()
+            MENU.body = MENU.body.replace('%menu%', ContentsMenu)
+        }
+        if (MenuType == 'all') {
+            
+        }
+        if (MenuType == 'sub') {
+            let ContentsMenu: string = ''
+            let SubMenu = commands.category[data.text.args[0]]
+            if (!SubMenu) {
+                client.sendMessage(data.from, { text: `Submenu "${data.text.args[0]}" not available in main menu` }, { quoted: data.chat })
+                return
+            }
+            
+            Object.keys(SubMenu).forEach(v => {
+                ContentsMenu += "> " + (database.config.prefix || "%") + SubMenu[v].help[0] + '\n'
             })
             
+            ContentsMenu = ContentsMenu.trimEnd()
+            MENU.body = MENU.body.replace('%menu%', ContentsMenu)
         }
         
-        if (MenuType == 'sub') {
-            
+        MENU.footer = database.config.owner
+        const TemplateMenu = {
+            text: (MENU.header + MENU.body),
+            footer: MENU.footer,
+            templateButtons: []
         }
+        client.sendMessage(data.from, TemplateMenu, { quoted: data.chat })
+        
     } catch (e) {
         logger.error(e)
         client.sendMessage(data.from, {
@@ -54,8 +83,9 @@ command['default'] = async (client, { data, database }, logger) => {
         })
     }
 }
+
 //PERMISSION
-command['permission'] = {
+command.permission = {
     owner: false,
     admin: {
         bot: false,
@@ -67,7 +97,7 @@ command['permission'] = {
     private: false
 };
 //NEED
-command['need'] = {
+command.need = {
     register: false,
     limit: {
         amount: 0
@@ -78,14 +108,18 @@ command['need'] = {
     level: 0
 };
 //INFO
-command['name'] = 'Menu'
-command['help'] = ['menu'].map(v => v + ' ');
-command['use'] = /^menu$/i;
+command.name = 'Menu'
+command.help = [].map(v => v + ' ');
+command.category = ''
+command.use = /^menu$/i;
 
 //OPTION
-command['disable'] = false;
-command['beta'] = false;
-command['support'] = {
+command.disable = {
+    active: false,
+    reason: ''
+};
+command.beta = false;
+command.support = {
     android: true,
     linux: true,
     windows: true

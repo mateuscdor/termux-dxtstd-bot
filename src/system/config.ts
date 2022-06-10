@@ -1,11 +1,18 @@
-import * as path from "path"
-import * as fs from "fs"
+import * as path from 'path'
+import * as fs from 'fs'
 
-import { logger } from "../lib/logger"
+import { logger } from '../lib/logger'
 
-const PATH_CONFIG_JSON = path.resolve(__dirname, '../../config.json')
 
-const config = JSON.parse(String(fs.existsSync(PATH_CONFIG_JSON) ? fs.readFileSync(PATH_CONFIG_JSON) : "{}")) as any
+
+const config = {
+    db: 'main',
+    prefix: '%',
+    timezone: 'Asia/Makassar',
+    ReadOnly: false,
+    QRImage: false
+} as any
+
 const args = [...process.argv.slice(2)]
 
 const isOpts = function (args) {
@@ -47,7 +54,7 @@ args.forEach(v => {
             if (!args[i + 1]) throw MakeError(errorDB)
             else if (isOpts(args[i + 1])) throw MakeError(errorDB);
             logger.info('Set Database to "%s" (child ts-node)', args[i + 1])
-            config.database = args[i + 1]
+            config.db = args[i + 1]
             break
         default:
             logger.error('Args "%s" unknown!!', opts)

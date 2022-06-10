@@ -27,7 +27,7 @@ export function SimpleData (this: any, chat: any, database)  {
     
     data['user']['is'] = {}
     
-    data['user']['is']['owner'] = data.sender.startsWith(config.owner.NoPhone)
+    data['user']['is']['owner'] = data.sender.startsWith(database.config.owner.NoPhone)
     //data['user']['is']['coowner'] = data.sender.startsWith(config.coowner.NoPhone)
     data['user']['is']['admin'] = {
         super: false,
@@ -51,6 +51,6 @@ export function SimpleData (this: any, chat: any, database)  {
     }
     data['text']['args'] = text.trim().split(/ +/).slice(1)
     data['text']['body'] = text.trim().split(/ +/).slice(1).join(' ')
-    data['text']['command'] = (text.startsWith(config.prefix) ? text.slice(1).trim().split(/ +/).shift().toLowerCase() : undefined)
+    data['text']['command'] = (text.startsWith(database.config.prefix) ? text.slice(1).trim().split(/ +/).shift().toLowerCase() : undefined)
     return data
 }

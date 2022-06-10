@@ -25,8 +25,12 @@ export interface CommandType {
     };
     name: string;
     help: Array<string>;
+    category: string;
     use: RegExp;
-    disable: boolean;
+    disable: {
+        active: boolean;
+        reason: string
+    };
     beta: boolean;
     support: {
         android: boolean;

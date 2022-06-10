@@ -1,51 +1,79 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { logger } from "../lib/logger";
+import * as os from 'os'
+import { logger } from '../lib/logger';
+import { CommandType } from '../types' 
 
-const deepReadDir = function deepReadDir(dir) {
-    let results = [] as any;
-    const list = fs.readdirSync(dir);
-    let i = 0;
-    function next() {
-        let file = list[i++];
-        if (!file) return results;
-            file = path.resolve(dir, file);
-            const stat = fs.statSync(file);
-            if (stat && stat.isDirectory()) {
-                const res = deepReadDir(file);
-                results = results.concat(res);
-                return next();
+interface CategoryCommand {
+    downloader: any;
+    games: any;
+    owner: any;
+    utility: any;
+}
+
+interface ClassCommands {
+    category: CategoryCommand;
+    uncategory: any;
+    load: () => void
+}
+
+const COMMANDS_PATH = path.resolve(__dirname, '..', 'cmd/')
+const DEVICE_OS = os.platform()
+const loader = function loader(this: ClassCommands) {
+    const dir = fs.readdirSync(COMMANDS_PATH)
+    for (let FileCommand of dir) {
+        try {
+            let TMPLoadCMD = {} as CommandType
+            const CommandOnDir = (!(FileCommand.endsWith('.ts')) && (fs.existsSync(path.join(COMMANDS_PATH, FileCommand, 'index.ts'))))
+            const CommandOnFile = (FileCommand.endsWith('.ts'))
+            if (CommandOnDir) {
+                TMPLoadCMD = require(path.join(COMMANDS_PATH, FileCommand))
+            } else if (CommandOnFile) {
+                TMPLoadCMD = require(path.join(COMMANDS_PATH, FileCommand))
             } else {
-            results.push(file);
-            return next();
+                continue
+            }
+            
+            if (!TMPLoadCMD.default) {
+                
+                continue
+            }
+            if (!TMPLoadCMD.support[DEVICE_OS]) {
+                
+                continue
+            }
+            if (TMPLoadCMD.disable.active) {
+                
+                continue
+            }
+            if (TMPLoadCMD.beta) {
+                
+            }
+            
+            if (TMPLoadCMD.category != '') {
+                (!(this.category[TMPLoadCMD.category]) && (this.category[TMPLoadCMD.category] = {}));
+                this.category[TMPLoadCMD.category][TMPLoadCMD.name] = TMPLoadCMD
+            } else {
+                this.uncategory[TMPLoadCMD.name] = TMPLoadCMD
+            }
+        } catch (error) {
+            logger.error(error)
         }
     }
-    return next();
-};
+}
 
-const commands = {} as any;
-const file = deepReadDir(path.resolve(__dirname, '../cmd/'));
-
-const TypeCommand = file.map(filename => {
-    const folder = filename.split('/').reverse().slice(1)[0]
-    if (folder.endsWith('.ts')) return 
-    return folder
-})
-TypeCommand.forEach(type => {
-    commands[type] = {}
-})
-
-file.forEach(filename => {
-    const FilenameNoExt = filename.replace('.ts', '')
-    const FilenameSplit = FilenameNoExt.split('/').reverse()
+export class Commands {
+    category: CategoryCommand = {
+        
+    } as CategoryCommand
     
-    const command = require(filename)
-    if (!command.default) return;
-    if (!command.support[process.platform]) logger.error('Command "%s" not supported on your OS...', command.name)
-    if (FilenameSplit[1] == "cmd") commands[FilenameSplit[0]] = command;
-        else commands[FilenameSplit[1]][FilenameSplit[0]] = command;
-})
-
-export {
-    commands
+    uncategory = {
+        
+    } as any
+    
+    load = () => {}
+    constructor() {
+        this.load = loader
+        this.load()
+    }
 }

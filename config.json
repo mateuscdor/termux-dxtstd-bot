@@ -9,7 +9,6 @@
             "paypal": "https://paypal.me/dentaft"
         }
     },
-    "db": "main",
     "timezone": "Asia/Makassar",
     "website": "https://",
     "prefix": "%",

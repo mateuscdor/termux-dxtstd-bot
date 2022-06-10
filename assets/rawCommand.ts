@@ -1,7 +1,7 @@
 import * as util from 'util'
 
 const command: CommandType = {} as CommandType;
-command['default'] = async (client, { data, database }, logger) => {
+command.default = async (client, { data, database }, logger) => {
     try {
         
     } catch (e) {
@@ -14,7 +14,7 @@ command['default'] = async (client, { data, database }, logger) => {
     }
 }
 //PERMISSION
-command['permission'] = {
+command.permission = {
     owner: true,
     admin: {
         bot: false,
@@ -26,7 +26,7 @@ command['permission'] = {
     private: false
 };
 //NEED
-command['need'] = {
+command.need = {
     register: false,
     limit: {
         amount: 0
@@ -37,14 +37,15 @@ command['need'] = {
     level: 0
 };
 //INFO
-command['name'] = ''
-command['help'] = [].map(v => v + ' ');
-command['use'] = /^$/i;
+command.name = ''
+command.help = [].map(v => v + ' ');
+command.category = ''
+command.user = /^$/i;
 
 //OPTION
-command['disable'] = false;
-command['beta'] = false;
-command['support'] = {
+command.disable = false;
+command.beta = false;
+command.support = {
     android: true,
     linux: true,
     windows: true

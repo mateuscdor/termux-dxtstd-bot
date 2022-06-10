@@ -3,6 +3,7 @@ import * as path from "path"
 
 import { logger } from "../lib";
 import { DatabaseType } from '../types'
+import { NEW_CONFIG } from './default'
 
 import { AuthenticationState, useSingleFileAuthState, initAuthCreds, makeInMemoryStore, BufferJSON } from "@adiwajshing/baileys"
 
@@ -123,13 +124,7 @@ const save = function (this: any, name: string='') {
 }
 
 export class Database {
-    config = {
-        db: {
-            name: '',
-            dir: '',
-            file: {}
-        }
-    }
+    config = NEW_CONFIG
     auth = {
         creds: initAuthCreds(),
         keys: {}

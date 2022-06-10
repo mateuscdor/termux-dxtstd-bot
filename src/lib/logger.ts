@@ -35,7 +35,7 @@ const pinoLevel = function (logLevel: any) {
     } else if (logLevel == 50) {
         return coloringText(("[  " + "ERROR" + "  ]"), 'red')
     } else if (logLevel == 60) {
-        return coloringBGText(("[ " + "FATAL" + "  ]"), 'red')
+        return coloringBGText(("[  " + "FATAL" + "  ]"), 'red')
     } else {
         return coloringText(("[  " + "USERLVL" + "  ]"), 'white')
     }

@@ -1,20 +1,21 @@
-import { commands } from "../command"
+import { Commands } from "../command"
 import { logger } from "../../lib/logger"
 
 export async function CommandHandler (this: any, client, { data, database }) {
+    const commands = new Commands()
     let command
-    Object.keys(commands).forEach(type => {
-        if (typeof commands[type]?.default == "function") {
-            if (commands[type].use.test(data.text.command)) {
-                command = commands[type]
-            }
-        } else {
-            Object.keys(commands[type]).forEach(cmd => {
-                if (commands[type][cmd].use.test(data.text.command)) {
-                    command = commands[type][cmd]
-                }
-            })
+    Object.keys(commands.uncategory).forEach(cmd => {
+        if (commands.uncategory[cmd].use.test(data.text.command)) {
+            command = commands.uncategory[cmd]
         }
+    })
+    
+    Object.keys(commands.category).forEach(type => {
+        Object.keys(commands.category[type]).forEach(cmd => {
+            if (commands.category[type][cmd].use.test(data.text.command)) {
+                command = commands.category[type][cmd]
+            }
+        })
     })
     
     if (!command) {

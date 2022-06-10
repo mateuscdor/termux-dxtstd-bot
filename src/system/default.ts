@@ -51,10 +51,12 @@ const NEW_CONFIG = {
     prefix: '%',
     timezone: 'Asia/Makassar',
     db: {
-        name: '',
+        name: 'main',
         dir: '',
         file: {}
-    }
+    },
+    ReadOnly: false,
+    QRImage: false
 }
 
 export {
