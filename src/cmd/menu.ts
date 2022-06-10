@@ -1,4 +1,6 @@
 import * as util from 'util'
+import * as fs from 'fs'
+
 import { Commands } from '../system/command'
 import { CommandType } from '../types'
 
@@ -65,8 +67,11 @@ command.default = async (client, { data, database }, logger) => {
             ContentsMenu = ContentsMenu.trimEnd()
             MENU.body = MENU.body.replace('%menu%', ContentsMenu)
         }
-        
-        MENU.footer = database.config.owner
+        ,
+        MENU.footer = MENU.footer.replace('%NameOwner%', database.config.owner.profile.name)
+        const PackageJSON = JSON.parse(String(fs.readFileSync('../../package.json')))
+
+        MENU.footer = MENU.footer.replace('%package%', (PackageJSON.name+"@^"PackageJSON.version))
         const TemplateMenu = {
             text: (MENU.header + MENU.body),
             footer: MENU.footer,
