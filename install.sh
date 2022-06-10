@@ -18,12 +18,54 @@ fi
 ### Package
 PACKAGE_ANDROID="nodejs wget curl git ffmpeg sox imagemagick";
 PACKAGE_LINUX="libreoffice wget curl git ffmpeg sox imagemagick"
+PACKAGES_ANDROID=(
+    wget curl git ffmpeg sox magick
+)
+PACKAGES_LINUX=(
+    libreoffice wget curl git ffmpeg sox convert
+)
 
 DEVICE_OS=$(uname -o)
 DEVICE_ARCH=$(uname -m)
 echo "Detected OS: ${DEVICE_OS}"
 echo "Detected Arch: ${DEVICE_ARCH}"
 echo ""
+
+echo "Require Package: "
+if [ $DEVICE_OS == 'GNU/Linux' ]
+then
+    for PACKAGE in "${PACKAGES_LINUX[@]}"
+    do
+        EXISTS='No'
+        if [ -e $PREFIX/bin/$PACKAGE ]
+        then
+            EXISTS='Yes'
+        fi
+        echo "> \"${PACKAGE}\" exists: ${EXISTS}"
+    done
+fi
+if [ $DEVICE_OS == 'Android' ]
+then
+    for PACKAGE in "${PACKAGES_ANDROID[@]}"
+    do
+    EXISTS='No'
+        if [ -e $PREFIX/bin/$PACKAGE ]
+        then
+            EXISTS='Yes'
+        fi
+        echo "> \"${PACKAGE}\" exists: ${EXISTS}"
+    done
+fi
+echo
+
+NODEJS_EXISTS="NO"
+if [ -e "${PREFIX}/bin/node" ]
+then
+    NODEJS_EXISTS="YES"
+    NODEJS_EXISTS+=" ($(node --version))"
+fi
+
+echo "NodeJS Exists: ${NODEJS_EXISTS}"
 
 ### For Package Manager
 PACKAGE_MANAGER=""
@@ -82,14 +124,20 @@ ask_install_package() {
         then
             if [ $PACKAGE_MANAGER == "APT" ]
             then
+                sudo apt update
+                sudo apt upgrade
                 sudo apt install $PACKAGE_LINUX
                 else if [ $PACKAGE_MANAGER == "DNF" ] 
                 then
+                    sudo dnf check-update
+                    sudo dnf upgrade
                     sudo dnf install $PACKAGE_LINUX
                 fi
             fi
             else if [ $DEVICE_OS == "Android" ]
             then
+                apt update
+                apt upgrade
                 apt install $PACKAGE_ANDROID
             fi
         fi
@@ -99,7 +147,7 @@ ask_install_package;
 
 
 ask_install_nodejs() {
-    if [ DEVICE_OS == "GNU/Linux" ]
+    if [ $DEVICE_OS == "GNU/Linux" ]
     then
         read -p "Install/Upgrade NodeJS? [Y/n]: " ANSWER_INSTALL
         case "$ANSWER_INSTALL" in
@@ -111,6 +159,7 @@ ask_install_nodejs() {
         ;;
             *)
             ANSWER_INSTALL="N"
+            return
         ;;
         esac
         

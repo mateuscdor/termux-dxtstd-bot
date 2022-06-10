@@ -41,6 +41,7 @@ file.forEach(filename => {
     
     const command = require(filename)
     if (!command.default) return;
+    if (!command.support[process.platform]) logger.error('Command "%s" not supported on your OS...', command.name)
     if (FilenameSplit[1] == "cmd") commands[FilenameSplit[0]] = command;
         else commands[FilenameSplit[1]][FilenameSplit[0]] = command;
 })
