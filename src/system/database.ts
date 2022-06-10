@@ -122,7 +122,7 @@ const save = function (this: any, name: string='') {
     })
 }
 
-const MakeDatabase = class MakeDatabase {
+export class Database {
     config = {
         db: {
             name: '',
@@ -153,10 +153,3 @@ const MakeDatabase = class MakeDatabase {
     }
 }
 
-
-const database = new MakeDatabase('main')
-
-export {
-    MakeDatabase,
-    database
-}

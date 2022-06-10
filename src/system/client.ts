@@ -1,14 +1,14 @@
-import makeWASocket, { DEFAULT_CONNECTION_CONFIG } from "@adiwajshing/baileys";
-import * as fs from "fs";
-import * as path from "path";
-import { logger } from "../lib/logger";
-import { MakeDatabase } from "./database"
+import makeWASocket, { DEFAULT_CONNECTION_CONFIG } from '@adiwajshing/baileys';
+import * as fs from 'fs';
+import * as path from 'path';
 
-import { EventsHandler } from "./handler"
+import { logger } from '../lib/logger';
+import { Database } from './database'
+import { EventsHandler } from './handler'
 
 const startClient = function (opts: any={}) {
-    const database = new MakeDatabase((opts.db || 'other'))
-    database.load((opts.db || 'other'))
+    const database = new Database((opts.db))
+    database.load((opts.db))
     
     const client = makeWASocket({
         auth: database.auth,
