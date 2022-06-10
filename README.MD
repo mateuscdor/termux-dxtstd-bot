@@ -16,12 +16,9 @@ if using termux, maybe multiple plugins it's disabled
 ### Install
 
 ```bash
-apt install nodejs
-npm install -g ts-node nodemon
-
 git clone https://github.com/DentaCH/dxtstd-bot
 cd dxtstd-bot
-ts-node install
+bash install.sh
 ```
 
 ### Run
