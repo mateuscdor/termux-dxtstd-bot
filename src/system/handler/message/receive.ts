@@ -1,6 +1,5 @@
 import { SimpleChat, SimpleData } from '../../simpler';
 import { CommandHandler } from '../command';
-import { config } from '../../config'
 import { logger } from '../../../lib';
 
 import chalk from 'chalk';
@@ -40,7 +39,7 @@ export async function ReceiverMessageHandler(chat: any, client: any, database: a
 
         if (data.text.command) logger.command(fetchLog(data));
             else logger.message(fetchLog(data));
-        if (config.ReadOnly) return
+        if (database.config.ReadOnly) return
 
         if (data.text.command) {
             CommandHandler(client, { data, database })
