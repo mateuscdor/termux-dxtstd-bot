@@ -1,5 +1,6 @@
 import * as util from 'util'
 import * as fs from 'fs'
+import * as path from 'path'
 
 import { Commands } from '../system/command'
 import { CommandType } from '../types'
@@ -20,7 +21,7 @@ Hi %user%!
 
 information for donation, type *%donate*`.trimStart(),
         footer: `
-Owner bot: %nameOwner%
+Owner bot: %NameOwner%
 %package%`.trimStart()
     } as any
 }
@@ -67,11 +68,11 @@ command.default = async (client, { data, database }, logger) => {
             ContentsMenu = ContentsMenu.trimEnd()
             MENU.body = MENU.body.replace('%menu%', ContentsMenu)
         }
-        ,
+        
         MENU.footer = MENU.footer.replace('%NameOwner%', database.config.owner.profile.name)
-        const PackageJSON = JSON.parse(String(fs.readFileSync('../../package.json')))
+        const PackageJSON = JSON.parse(String(fs.readFileSync(path.resolve(__dirname, '../../package.json'))))
 
-        MENU.footer = MENU.footer.replace('%package%', (PackageJSON.name+"@^"PackageJSON.version))
+        MENU.footer = MENU.footer.replace('%package%', (PackageJSON.name+"@^"+PackageJSON.version))
         const TemplateMenu = {
             text: (MENU.header + MENU.body),
             footer: MENU.footer,

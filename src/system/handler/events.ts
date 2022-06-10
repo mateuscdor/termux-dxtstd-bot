@@ -8,6 +8,7 @@ export async function EventsHandler (client, database, opts: object={}) {
     const { ev, ws } = client;
     
     ev.on('creds.update', () => {
+        database.load()
         database.auth = client.authState
         database.save()
     })

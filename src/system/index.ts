@@ -21,7 +21,6 @@ const StartBot = function (opts: any={}) {
 
 const StartBotArgs = function () {
     const config = NEW_CONFIG as any
-
     const args = [...process.argv.slice(2)]
     
     const isOpts = function (args) {
@@ -82,6 +81,7 @@ if (!module.parent) {
         
         database.config = {
             ...database.config,
+            ...config,
             ...MainConfig
         }
         database.save()

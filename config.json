@@ -11,7 +11,5 @@
     },
     "timezone": "Asia/Makassar",
     "website": "https://",
-    "prefix": "%",
-    "ReadOnly": false,
-    "QRImage": false
+    "prefix": "%"
 }
